@@ -1,5 +1,9 @@
 package PrimerTrimestre.TareasPracticasClase.Tarea_10;
 
-public class Deportista {
+public interface Deportista {
     
+    public void entrenar();
+    public void jugarPartido();
+    public boolean tieneSobrepeso();
+
 }
