@@ -2,12 +2,12 @@ package PrimerTrimestre.Examenes.Practica3;
 
 public class Pregunta2A {
     
+    /*
+     * Crea un programa que dibuje por consola las tablas de multiplicar del siguiente array:
+     * [4, 5, 10, 2, 3]
+     */
+
     public static void main(String[] args) throws Exception {
-
-        /*
-         * Tabla multiplicar del 4
-         */
-
         
          int [] numeros = {1,2,3,4};
 

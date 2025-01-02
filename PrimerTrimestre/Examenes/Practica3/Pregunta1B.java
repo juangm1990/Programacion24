@@ -3,6 +3,12 @@ package PrimerTrimestre.Examenes.Practica3;
 import java.util.Scanner;
 
 public class Pregunta1B {
+
+    /*
+     * Programa que lea 10 números enteros por teclado y los guarde en un array. 
+     * Calcula y muestra la media de los números que estén en las posiciones pares del array.
+     * Considera la primera posición del arraya (posición 0) como par.
+     */
     
         public static void main(String[] args) throws Exception {
 
