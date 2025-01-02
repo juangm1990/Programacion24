@@ -11,7 +11,7 @@ public class Persona {
     
     
     
-        //El constructor
+        // El constructor
         public Persona (String n, String ape, String fec, int edad){
     
             this.nombre = n;
@@ -21,7 +21,7 @@ public class Persona {
     
         }
         
-        // Metodos utilizados fuera de la clase para ser utilizado por LOS atributos (Operar)
+        // Métodos utilizados fuera de la clase para ser utilizado por los atributos (Operaciones)
     
         public String getNombre(){
             return this.nombre;

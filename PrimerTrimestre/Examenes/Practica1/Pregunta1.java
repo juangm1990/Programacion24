@@ -4,58 +4,42 @@ import java.util.Scanner;
 
 public class Pregunta1 {
     
-    /*
-     * Realizar un programa en PHP que calcule el índice Masa Muscular = peso/(altura^2) y saque por pantalla 
-     * el estado en el que se encuentra la persona. (El peso deberá ir en Kg y la altura en metros):
+        /*
+     * Realiza un programa que pida por teclado el resultado (tipo dato entero) obtenido al lanzar 
+     * un dado de seis caras y muestre por pantalla el número en letras (tipo dato cadena) 
+     * de la cara opuesta al resultado obtenido.
      * 
-     * IMC menor a 18,5: Bajo peso
-     * IMC entre 18,5 y 24,9: Normopeso
-     * IMC entre 25 y 26,9: Sobrepeso grado I
-     * IMC entre 27 y 29,9: Sobrepeso grado II
-     * IMC entre 30 y 34,9: Obesidad de tipo I
-     * IMC entre 35 y 39,9: Obesidad de tipo II
-     * IMC entre 40 y 49,9: Obesidad de tipo III (mórbida)
-     * IMC mayor a 50: Obesidad de tipo IV (extrema)
+     * 1./ En las caras opuestas de un dado de seis caras están los números: 1-6, 2-5 y 3-4.
+     * 2./ Si el número introducido es menor que 1 o mayor que 6, se mostrará el mensaje: "ERROR: número incorrecto."
      */
-    
-    public static void main(String[] args) throws Exception {
 
-                Scanner input = new Scanner(System.in);
+        public static void main(String[] args) throws Exception {
+        
+        //Habilita meter un número
+        Scanner input = new Scanner (System.in);
 
-        double kg = 0;
-        double metros = 0;
-        double indiceMasaCorporal = 0;
-        String situacion ="";
+        int numero=0;
 
+        System.out.println("Introduzca el número");
+        //Insertar numero
+        numero = input.nextInt ();
 
-        System.out.println("introduce tu altura en metros");
-        metros=input.nextDouble();
-
-        System.out.println("Introduce tu peso en kilogramos");
-        kg=input.nextDouble();
-
-        indiceMasaCorporal = kg / (metros*metros);
-
-        if(indiceMasaCorporal < 18.5) {
-            situacion="bajo peso";
-        } else if(indiceMasaCorporal >= 18.5 && indiceMasaCorporal < 25) {
-            situacion="normopeso";
-        } else if(indiceMasaCorporal >= 25 && indiceMasaCorporal < 27) {
-            situacion="sobrepeso grado I";
-        } else if(indiceMasaCorporal >= 27 && indiceMasaCorporal < 30) {
-            situacion="sobrepeso grado II";
-        } else if(indiceMasaCorporal >= 30 && indiceMasaCorporal < 35) {
-            situacion="obesidad de tipo I";
-        } else if(indiceMasaCorporal >= 35 && indiceMasaCorporal < 40) {
-            situacion="obesidad de tipo II";
-        } else if(indiceMasaCorporal >= 40 && indiceMasaCorporal < 50) {
-            situacion="obesidad de tipo III (mórbida)";
-        } else {
-            situacion="obesidad de tipo IV (extrema)";
+        if (numero == 1) {
+            System.out.println("Seis");
+        } else if (numero == 2) {
+            System.out.println("Cinco");
+        } else if (numero == 3) {
+            System.out.println("Cuatro");    
+        } else if (numero == 4) {
+            System.out.println("Tres"); 
+        } else if (numero == 5) {
+            System.out.println("Dos"); 
+        } else if (numero == 6) {
+            System.out.println("Uno");   
+        } else if ((numero >1 || numero <6)) {
+            System.out.println("ERROR");  
         }
-
-        System.out.println("Tu IMC es de "+indiceMasaCorporal+" y estás en una situación de "+situacion);
-
+        
         input.close();
     }
 }
