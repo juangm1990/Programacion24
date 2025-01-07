@@ -1,0 +1,36 @@
+Vehiculo.java:
+
+    Clase base para vehículos, con atributos como:
+        matricula (cadena de texto) que representa el número de matrícula del vehículo.
+        modelo (cadena de texto) que representa el modelo del vehículo.
+        potencia (entero) que representa la potencia del vehículo.
+        MAXVEHICULOS (entero constante) que limita el número máximo de vehículos registrados.
+        numVehiculos (entero) que lleva la cuenta de la cantidad de vehículos registrados.
+    Métodos:
+        entradaVehiculo() (booleano): Permite la entrada de un vehículo si no se ha alcanzado el número máximo de vehículos.
+        salidaVehiculo() (booleano): Permite la salida de un vehículo si existe un vehículo registrado.
+        obtenerNumVehiculos() (entero): Devuelve el número de vehículos registrados.
+    Métodos de acceso (getters y setters) para los atributos matricula, modelo, potencia, numVehiculos.
+
+Camion.java:
+
+    Clase derivada de Vehiculo, con atributos adicionales:
+        tara (double) que representa el peso del camión vacío (en kilogramos).
+        carga (double) que representa el peso de la carga que lleva el camión (en kilogramos).
+    Métodos:
+        calcularMMA() (double): Calcula la masa máxima autorizada del camión, que es la suma de tara y carga.
+    Métodos de acceso (getters y setters) para los atributos tara y carga.
+
+Taxi.java:
+
+    Clase derivada de Vehiculo, con un atributo adicional:
+        numLicencia (entero) que representa el número de licencia del taxi.
+    Métodos:
+        Métodos de acceso (getters y setters) para el atributo numLicencia.
+
+Autobus.java:
+
+    Clase derivada de Vehiculo, con un atributo adicional:
+        numPlazas (entero) que representa el número de plazas disponibles en el autobús.
+    Métodos:
+        Métodos de acceso (getters y setters) para el atributo numPlazas.

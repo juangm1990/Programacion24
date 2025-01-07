@@ -1,43 +1,41 @@
 package PrimerTrimestre.Examenes.BolaExtra2;
 
+import java.util.Scanner;
+
 public class Pregunta2 {
     
-     /*
-     * Crea una función que devuelva un array con los números primos que se encuentren en otro array.
+    /*
+     * Pide una cadena y un carácter por teclado y muestra cuantas veces aparece el carácter en la cadena.
+     * 
+     * Introduzca una cadena: "desarrollo de aplicaciones web"
+     * Introduzca un carácter: 'e'
+     * El carácter 'e' aparece 4 veces
      */
 
-     public static void main(String[] args) throws Exception{
-          
-          int[] numeros = { 10, 13, 7, 18, 25, 3, 19, 11, 4 }; 
-          int[] primos = new int[numeros.length]; 
-          int array = 0; 
-  
-          // Recorremos el array de números
-          for (int i = 0; i < numeros.length; i++) {
-              int numero = numeros[i];
-              boolean esPrimo = true;
-  
-              // Verificamos si el número es primo
-              if (numero <= 1) {
-                  esPrimo = false; // Los números menores o iguales a 1 no son primos
-              } else {
-                  for (int j = 2; j < numero; j++) {
-                      if (numero % j == 0) { // Si el número es divisible por otro, no es primo
-                          esPrimo = false;
-                          break;
-                      }
-                  }
-              }
+    public static void main(String[] args) {
+        
+        Scanner input = new Scanner(System.in);
 
-              if (esPrimo) {
-                  primos[array] = numero;
-                  array++;
-              }
-          }
-  
-          System.out.print("Los números primos son: ");
-          for (int i = 0; i < array; i++) {
-              System.out.print(primos[i] + " ");
-          }
-      }
+        // Solicitar al usuario la cadena
+        System.out.print("Introduzca una cadena: ");
+        String cadena = input.nextLine();
+
+        // Solicitar al usuario el carácter
+        System.out.print("Introduzca un carácter: ");
+        char caracter = input.next().charAt(0);
+
+        // Contar las veces que aparece el carácter en la cadena
+        int contador = 0;
+
+        for (int i = 0; i < cadena.length(); i++) {
+            if (cadena.charAt(i) == caracter) {
+                contador++;
+            }
+        }
+
+        System.out.println("El carácter '" + caracter + "' aparece " + contador + " veces.");
+
+        input.close();
+    }
+
 }

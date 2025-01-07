@@ -1,4 +1,4 @@
-package PrimerTrimestre.Examenes.BolaExtra2;
+package PrimerTrimestre.Examenes.BolaExtra3;
 
 public class Pregunta4 {
     
