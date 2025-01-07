@@ -1,4 +1,4 @@
-package PrimerTrimestre.Examenes.Recuperación1;
+package PrimerTrimestre.Examenes.BolaExtra1;
 
 import java.util.Scanner;
 
