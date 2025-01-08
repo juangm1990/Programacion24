@@ -9,49 +9,52 @@ public class Pregunta2 {
         Scanner input = new Scanner(System.in);
 
         int numero = 0;
-        int contador = 0;
-        int sumaImpares = 0;
-        int cantidadImpares = 0;
-        int mayorPar = -1;
-        double mediaImpares = 0;
+        int contador1 = 0;
+        int contador2 = 0;
+
+        int sumaNumerosImpares = 0;
+        int numeroMayorPar = 0;
+        double media = 0;
 
         while (numero >= 0) {
-            System.out.print("Introduce un número (número negativo para terminar): ");
+            System.out.println("Para terminar introduce un número negativo");
+            System.out.println("Introduce todos los números:");
             numero = input.nextInt();
             
-            if (numero >= 0) { // Solo procesar números no negativos
-                contador++;
+            if (numero >= 0) { 
+                contador1++;
                 
-                if (numero % 2 != 0) { // Número impar
-                    sumaImpares += numero;
-                    cantidadImpares++;
-                } else { // Número par
-                    if (numero > mayorPar) {
-                        mayorPar = numero;
+                if (numero % 2 != 0) { 
+                    sumaNumerosImpares = sumaNumerosImpares + numero;
+                    contador2++;
+                } else { 
+                    if (numero > numeroMayorPar) {
+                        numeroMayorPar = numero;
                     }
                 }
             }
         }
         
-        if (contador == 0) {
-            System.out.println("No se han introducido números.");
+        if (contador1 == 0) {
+            System.out.println("Error, no hay números");
         } else {
-            System.out.println("Cantidad de números introducidos: " + contador);
+            System.out.println("Números introducidos totales = " + contador1);
             
-            if (cantidadImpares > 0) {
-                mediaImpares = sumaImpares / cantidadImpares;
-                System.out.println("La media de los números impares es: " + mediaImpares);
+            if (contador2 > 0) {
+                media = sumaNumerosImpares / contador2;
+                System.out.println("La media de los números impares es: " + media);
             } else {
-                System.out.println("No se han introducido números impares.");
+                System.out.println("No hay números impares");
             }
             
-            if (mayorPar >= 0) {
-                System.out.println("El mayor de los números pares es: " + mayorPar);
+            if (numeroMayorPar >= 0) {
+                System.out.println("El numero mayor par es: " + numeroMayorPar);
             } else {
-                System.out.println("No se han introducido números pares.");
+                System.out.println("No hay números pares");
             }
         }
         
         input.close();
+
     }
 }
