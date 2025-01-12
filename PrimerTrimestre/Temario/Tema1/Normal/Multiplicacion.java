@@ -1,3 +1,5 @@
+package PrimerTrimestre.Temario.Tema1.Normal;
+
 public class Multiplicacion {
     
     public static void main(String[] args) {

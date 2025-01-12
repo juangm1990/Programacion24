@@ -1,7 +1,9 @@
+package PrimerTrimestre.Temario.Tema1.Normal;
+
 public class MedAritmetica {
     
     public static void main(String[] args) throws Exception{
-        
+
         double numero1 = 1;
         double numero2 = 2;
         double numero3 = 3;
@@ -9,5 +11,6 @@ public class MedAritmetica {
 
         media = (numero1 + numero2 + numero3) / 3.0;
         System.out.println(media);
+        
     }
 }

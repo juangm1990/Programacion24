@@ -20,7 +20,6 @@ public class Division {
         division = numero1 / numero2;
         System.out.println("El resultado de la división = " + division);
 
-
         input.close();
     }
 }
