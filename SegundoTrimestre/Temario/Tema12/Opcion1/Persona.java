@@ -1,4 +1,4 @@
-package SegundoTrimestre.Temario.Tema12;
+package SegundoTrimestre.Temario.Tema12.Opcion1;
 
 public class Persona {
     

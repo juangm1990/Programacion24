@@ -1,4 +1,4 @@
-package SegundoTrimestre.Temario.Tema12;
+package SegundoTrimestre.Temario.Tema12.Opcion1;
 
 import java.io.FileWriter;
 import java.util.ArrayList;
