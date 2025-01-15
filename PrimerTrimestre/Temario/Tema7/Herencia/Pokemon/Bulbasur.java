@@ -5,7 +5,6 @@ public class Bulbasur extends Pokemon {
 
     }
 
-
     //MÉTODO
     public void curar(){
         
