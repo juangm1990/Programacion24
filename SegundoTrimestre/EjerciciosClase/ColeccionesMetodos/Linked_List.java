@@ -1,4 +1,4 @@
-package SegundoTrimestre.EjerciciosClase.Colecciones;
+package SegundoTrimestre.EjerciciosClase.ColeccionesMetodos;
 
 import java.util.LinkedList;
 
