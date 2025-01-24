@@ -1,4 +1,4 @@
-package SegundoTrimestre.Temario.Tema14_Colecciones.Actividad1;
+package SegundoTrimestre.Temario.Tema14_Colecciones;
 
 import java.util.ArrayList;
 
@@ -33,6 +33,8 @@ public class ListaLetrasAlfabeto {
         letrasAlfabeto.remove(letra);
 
         System.out.println(letrasAlfabeto);
+
+
 
     }
 }
