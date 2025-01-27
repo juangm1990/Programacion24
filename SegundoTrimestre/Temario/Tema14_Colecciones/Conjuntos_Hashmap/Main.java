@@ -21,10 +21,10 @@ public class Main {
             
         }
 
-        mundo.forEach((i, a)){
-            System.out.println(i);
-            System.out.println(value);
-        }
+        //mundo.forEach((i, mundo)){
+            //System.out.println(i);
+            //System.out.println(mundo);
+        //}
 
 
 
