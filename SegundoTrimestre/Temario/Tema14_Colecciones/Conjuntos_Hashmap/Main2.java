@@ -1,8 +1,9 @@
 package SegundoTrimestre.Temario.Tema14_Colecciones.Conjuntos_Hashmap;
 
+
 import java.util.HashMap;
 
-public class Main {
+public class Main2 {
     
         public static void main(String[] args) throws Exception{
         
@@ -13,20 +14,12 @@ public class Main {
         mundo.put("Francia", "París");
         mundo.put("Portugal", "Lisboa");
 
-
+    
         
-        for (String i : mundo.keySet()) {
-            System.out.println(i);
-            System.out.println(mundo.get(i));
-            
-        }
-
-        
-
-        //mundo.forEach((i, mundo)){
-            //System.out.println(i);
-            //System.out.println(mundo);
-        //}
+        mundo.forEach((key, value) -> {
+            System.out.println(key);
+            System.out.println(value);
+        });
 
 
 

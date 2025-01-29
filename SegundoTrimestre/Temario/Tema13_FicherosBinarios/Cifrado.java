@@ -1,4 +1,4 @@
-package SegundoTrimestre.Temario.Tema13;
+package SegundoTrimestre.Temario.Tema13_FicherosBinarios;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
