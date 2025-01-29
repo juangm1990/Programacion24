@@ -101,24 +101,17 @@ public class Cifrado {
                         System.out.println(frase);
 
                         for (int i = 0; i < frase.length(); i++){
-                            posicion = abecedario.indexOf(frase.charAt(i) - numero);
+                            if (frase.charAt(i) >= 'A' && frase.charAt(i) <= 'Z') {
+                                posicion = abecedario.indexOf(frase.charAt(i)) - numero;
 
-                            if (posicion < -25) {
-                                posicion %= 26;
-
-                            }
-
-                            if (posicion < 0) {
-
-                                posicion += 26;
+                                if (posicion < 0) {
+                                    posicion += 26;
+                                }
 
                                 frase2 += abecedario.charAt(posicion);
-
                             } else {
                                 frase2 += frase.charAt(i);
                             }
-
-
                         }
 
                         System.out.println(frase2);
