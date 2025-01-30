@@ -1,3 +1,5 @@
+package PrimerTrimestre.Temario.Tema7_Herencia.Pokemon;
+
 public class Pokemon {
     
     protected int ps;

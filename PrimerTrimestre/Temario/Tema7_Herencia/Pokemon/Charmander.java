@@ -1,3 +1,5 @@
+package PrimerTrimestre.Temario.Tema7_Herencia.Pokemon;
+
 class Charmander extends Pokemon {
 
     //ATRIBUTOS

@@ -1,3 +1,5 @@
+package PrimerTrimestre.Temario.Tema7_Herencia.Pokemon;
+
 public class Main {
     
     public static void main(String[] args) {
@@ -24,5 +26,4 @@ public class Main {
         System.out.println(c1);
         System.out.println(d1);
     }
-    
 }
