@@ -26,9 +26,9 @@ public class Cifrado {
             String frase = "";
             char caracter = ' ';
             int numero = 0;
-
-            String abecedario = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             int posicion = 0;
+            String abecedario = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            
 
             switch (opcion) {
 
