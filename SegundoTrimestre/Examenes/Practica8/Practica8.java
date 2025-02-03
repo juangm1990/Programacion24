@@ -34,11 +34,11 @@ public class Practica8 {
         do {
 
             System.out.println("0| Salir del programa");
-            System.out.println("1.1| Fichero alumnos.txt");
-            System.out.println("1.2| Fichero notasPruebasPracticas.txt");
-            System.out.println("1.3| Fichero notasMedias");
-            System.out.println("1.4| Alumno con mayor nota media");
-            System.out.println("2| Calcular notas medias");
+            System.out.println("1| Fichero alumnos.txt");
+            System.out.println("2| Fichero notasPruebasPracticas.txt");
+            System.out.println("3| Fichero notasMedias");
+            System.out.println("4| Alumno con mayor nota media");
+            System.out.println("5| Calcular notas medias");
             System.out.println("----------------------------");
             System.out.println("Por favor, elige una opción:");
             System.out.println("----------------------------");
@@ -131,6 +131,10 @@ public class Practica8 {
 
         br.close();
     }
+
+    
+    
+
 
 
 

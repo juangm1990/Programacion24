@@ -1,8 +1,9 @@
-package SegundoTrimestre.EjerciciosClase.ColeccionesMetodos;
+package SegundoTrimestre.Apuntes.Linked_List;
 
 import java.util.LinkedList;
 
-public class Linked_List {
+public class Listas_enlazadas {
+    
     
     public static void main(String[] args) throws Exception{
         
@@ -12,9 +13,10 @@ public class Linked_List {
             lista.add(i);
         }
 
-        boolean estae114 = lista.contains(14);
+        boolean estae114 = lista.contains(3);
         lista.remove (4);
 
         System.out.println(lista);
     }
+
 }
