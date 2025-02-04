@@ -1,4 +1,4 @@
-package SegundoTrimestre.EjerciciosClase.Ficheros.Ficheros_Discord;
+package SegundoTrimestre.Discord.Ficheros_Discord;
 
 import java.io.FileReader;
 import java.util.ArrayList;

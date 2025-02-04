@@ -6,30 +6,29 @@ public class Estudiante {
     private String nombre;
     private int edad;
 
- 
+    // Constructor por defecto
     public Estudiante(int id, String nombre, int edad) {
         this.id = id;
         this.nombre = nombre;
         this.edad = edad;
     }  
     
+    // Constructor por parámetros
     public Estudiante(){
         super();
-        this.id = id;
-        this.nombre = nombre;
-        this.edad = edad;
+        this.id = 0;
+        this.nombre = null;
+        this.edad = 0;
     }
 
-    // Contructor de copia
+    // Constructor de copia
     public Estudiante(Estudiante copia){
         this.id = copia.id;
         this.nombre = copia.nombre;
         this.edad = copia.edad;
     }
 
-
-
-
+    // Métodos
     public int getId() {
         return id;
     }
@@ -59,8 +58,7 @@ public class Estudiante {
         this.edad = edad;
     }
 
-
-
+    // hashCode y equals
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -93,7 +91,7 @@ public class Estudiante {
         return true;
     }
 
-
+    // toString
     @Override
     public String toString() {
         return "Estudiante [id=" + id + ", nombre=" + nombre + ", edad=" + edad + "]";
