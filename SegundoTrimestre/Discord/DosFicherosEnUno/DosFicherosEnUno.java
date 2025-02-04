@@ -29,8 +29,8 @@ public class DosFicherosEnUno {
             opcion = input.nextInt();
             input.nextLine(); // Añadir línea EXTRA para evitar problemas con la terminal
 
-            String rutaFichero1 = "archivos/alumnos.dat";
-            String rutaFichero2 = "archivos/medias.dat";
+            String rutaFichero1 = "Archivos/alumnos.dat";
+            String rutaFichero2 = "Archivos/medias.dat";
             String contenidoFichero1 = "";
             String contenidoFichero2 = "";
             String vocales = "";
