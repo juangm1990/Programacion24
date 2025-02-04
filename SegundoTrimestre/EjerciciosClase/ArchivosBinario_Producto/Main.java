@@ -67,6 +67,38 @@ public class Main {
 
                 case 2:
 
+                System.out.println("Introduce la id del prodcuto buscar ");
+                int id = input.nextInt();
+
+                FileInputStream fis2 = null;
+                ObjectInputStream ois2 = null;
+        
+                try{
+
+                    fis2 = new FileInputStream("productos.dat");
+                    
+                   
+                    while (fis2.available()>0) {
+                        ois2 = new ObjectInputStream(fis2);
+                        Producto p = (Producto)ois2.readObject();
+                        
+                        if (p.getId() == id) {
+                            System.out.println(p);
+                        }
+                    } 
+        
+                } catch (Exception e){
+                    System.out.println(e.getMessage());
+        
+                } finally {
+                    try {
+                        fis2.close();
+                        ois2.close();
+                    } catch (Exception e){
+                        System.out.println(e.getMessage());
+                    }
+                }
+
                     break;
 
                 case 3:
