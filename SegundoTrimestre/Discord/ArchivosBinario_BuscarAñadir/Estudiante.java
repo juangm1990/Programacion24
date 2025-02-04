@@ -1,64 +1,58 @@
-package SegundoTrimestre.Discord.ArchivosBinario_Estudiantes;
+package SegundoTrimestre.Discord.ArchivosBinario_BuscarAñadir;
 
-public class Estudiante {
+
+import java.io.Serializable;
+
+public class Estudiante implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     
     private int id;
     private String nombre;
     private int edad;
 
-    // Constructor por defecto
     public Estudiante(int id, String nombre, int edad) {
         this.id = id;
         this.nombre = nombre;
         this.edad = edad;
-    }  
-    
-    // Constructor por parámetros
-    public Estudiante(){
-        super();
+    }
+
+    public Estudiante() {
         this.id = 0;
         this.nombre = null;
         this.edad = 0;
     }
 
-    // Constructor de copia
-    public Estudiante(Estudiante copia){
+    public Estudiante(Estudiante copia) {
         this.id = copia.id;
         this.nombre = copia.nombre;
         this.edad = copia.edad;
     }
 
-    // Métodos
     public int getId() {
         return id;
     }
-
 
     public void setId(int id) {
         this.id = id;
     }
 
-
     public String getNombre() {
         return nombre;
     }
-
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-
     public int getEdad() {
         return edad;
     }
-
-
+    
     public void setEdad(int edad) {
         this.edad = edad;
     }
 
-    // hashCode y equals
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -68,7 +62,6 @@ public class Estudiante {
         result = prime * result + edad;
         return result;
     }
-
 
     @Override
     public boolean equals(Object obj) {
@@ -91,9 +84,9 @@ public class Estudiante {
         return true;
     }
 
-    // toString
     @Override
     public String toString() {
         return "Estudiante [id=" + id + ", nombre=" + nombre + ", edad=" + edad + "]";
     }
 }
+

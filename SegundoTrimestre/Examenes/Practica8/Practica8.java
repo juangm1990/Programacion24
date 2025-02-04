@@ -236,7 +236,7 @@ public class Practica8 {
             FileReader fileReader = null;
             BufferedReader bufferedReader = null;
 
-            fileReader = new FileReader("SegundoTrimestre/Examenes/Practica8/notasMedias25.txt");
+            fileReader = new FileReader("SegundoTrimestre/Examenes/Practica8/alumnos.txt");
             bufferedReader = new BufferedReader(fileReader);
             String notas2="";
             double notaDouble=0;
