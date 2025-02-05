@@ -24,6 +24,7 @@ public class Main {
             System.out.println("4| Eliminar producto");
             System.out.println("5| Cambiar producto");
             System.out.println("6| Calcular media productos");
+            System.out.println("7| Ordenar productos por precio");
             System.out.println("----------------------------");
             System.out.println("Por favor, elige una opción:");
             System.out.println("----------------------------");
@@ -47,6 +48,9 @@ public class Main {
                     break;
                 case 6:
                     calcularMediaPrecios();
+                    break;
+                case 7:
+                    ordenarProductosPorPrecio();
                     break;
                 case 0:
                     System.out.println("¡Gracias y hasta pronto! Programa finalizado");
@@ -361,4 +365,48 @@ public class Main {
             }
         }
     }
+
+
+    // Función para ordenar los productos por precio
+    private static void ordenarProductosPorPrecio() {
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        ArrayList<Producto> productos = new ArrayList<>();
+        
+        try {
+            fis = new FileInputStream("productos.dat");  // Abrir el archivo para lectura
+
+            // Leer todos los productos y almacenarlos en la lista
+            while (fis.available() > 0) {
+                ois = new ObjectInputStream(fis);
+                Producto p = (Producto) ois.readObject();
+                productos.add(p);
+            }
+
+            // Ordenar la lista de productos por precio (de menor a mayor)
+            productos.sort((p1, p2) -> Double.compare(p1.getPrecio(), p2.getPrecio()));
+
+            // Mostrar los productos ordenados
+            System.out.println("Productos ordenados por precio:");
+            for (Producto p : productos) {
+                System.out.println(p);
+            }
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());  // Capturar cualquier error que ocurra
+        } finally {
+            try {
+                if (fis != null) {
+                    fis.close();
+                }
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
 }
