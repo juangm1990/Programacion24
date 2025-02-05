@@ -321,6 +321,8 @@ public class Main {
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
+            // Los productos sin el que ha sido eliminado). No es necesario usar .delete() 
+            // El archivo no se elimina físicamente, sino que se reescribe con los datos actualizados.
         }
     }
 
@@ -385,7 +387,10 @@ public class Main {
             }
 
             // Ordenar la lista de productos por precio (de menor a mayor)
+            // productos.sort((p1, p2) -> Double.compare(p1.getPrecio(), p2.getPrecio()));
+            // Ordenar la lista de productos por precio (de mayor a menor)
             productos.sort((p1, p2) -> Double.compare(p1.getPrecio(), p2.getPrecio()));
+            
 
             // Mostrar los productos ordenados
             System.out.println("Productos ordenados por precio:");
