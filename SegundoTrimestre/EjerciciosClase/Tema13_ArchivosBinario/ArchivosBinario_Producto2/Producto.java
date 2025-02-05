@@ -1,4 +1,5 @@
-package SegundoTrimestre.EjerciciosClase.Tema13_ArchivosBinario.ArchivosBinario_Producto;
+package SegundoTrimestre.EjerciciosClase.Tema13_ArchivosBinario.ArchivosBinario_Producto2;
+
 
 import java.io.Serializable;
 
@@ -18,7 +19,21 @@ public class Producto implements Serializable {
         this.precio = precio;
         this.cantidad = cantidad;
     }
-  
+
+    public Producto() {
+        this.id = 1;
+        this.nombre = "Cebolla";
+        this.precio = 30;
+        this.cantidad = 3;
+    }
+
+    public Producto(Producto copia) {
+        this.id = copia.id;
+        this.nombre = copia.nombre;
+        this.precio = copia.precio;
+        this.cantidad = copia.cantidad;
+    }
+    
     public int getId() {
         return id;
     }

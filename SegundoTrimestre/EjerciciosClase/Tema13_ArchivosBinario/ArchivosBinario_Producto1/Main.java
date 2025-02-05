@@ -1,4 +1,4 @@
-package SegundoTrimestre.EjerciciosClase.Tema13_ArchivosBinario.ArchivosBinario_Producto;
+package SegundoTrimestre.EjerciciosClase.Tema13_ArchivosBinario.ArchivosBinario_Producto1;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

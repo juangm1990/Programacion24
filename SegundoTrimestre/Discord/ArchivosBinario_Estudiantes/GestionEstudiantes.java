@@ -7,11 +7,13 @@ import java.io.ObjectOutputStream;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+import java.io.*;
+
 public class GestionEstudiantes {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int opcion = 0;
+        int opcion;
 
         do {
             System.out.println("GESTIÓN DE ESTUDIANTES");
@@ -25,8 +27,7 @@ public class GestionEstudiantes {
             System.out.println("7| Calcular la media de edades");
             System.out.println("8| Ordenar estudiantes por edad");
             System.out.println("----------------------------");
-            System.out.println("Por favor, elige una opción:");
-            System.out.println("----------------------------");
+            System.out.print("Por favor, elige una opción: ");
             opcion = input.nextInt();
 
             switch (opcion) {
@@ -43,10 +44,10 @@ public class GestionEstudiantes {
                     eliminarEstudiante(input);
                     break;
                 case 5:
-                    cambiarEdad(input); // Cambiar edad del estudiante
+                    cambiarEdad(input);
                     break;
                 case 6:
-                    cambiarID(input); // Cambiar ID del estudiante
+                    cambiarID(input);
                     break;
                 case 7:
                     calcularMediaEdades();
@@ -55,390 +56,173 @@ public class GestionEstudiantes {
                     ordenarEstudiantesPorEdad();
                     break;
                 case 0:
-                    System.out.println("¡Gracias y hasta pronto! Programa finalizado");
+                    System.out.println("¡Gracias y hasta pronto! Programa finalizado.");
                     break;
                 default:
-                    System.out.println("Ha ocurrido un error en el programa");
+                    System.out.println("Opción no válida.");
                     break;
             }
-
         } while (opcion != 0);
 
         input.close();
     }
 
-    // Función para agregar un estudiante
     private static void agregarEstudiante(Scanner input) {
-        FileOutputStream fos = null;
-        ObjectOutputStream oos = null;
+        ArrayList<Estudiante> estudiantes = cargarEstudiantes();
 
-        try {
-            fos = new FileOutputStream("estudiantes.dat", true);
-            oos = new ObjectOutputStream(fos);
-
-            System.out.println("Introduce el id ");
-            int id = input.nextInt();
-            System.out.println("Introduce el nombre ");
-            input.nextLine(); // Limpiar buffer
-            String nombre = input.nextLine();
-            System.out.println("Introduce la edad ");
-            int edad = input.nextInt();
-
-            Estudiante e = new Estudiante(id, nombre, edad);
-            oos.writeObject(e);
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        } finally {
-            try {
-                if (oos != null) {
-                    oos.close();
-                }
-                if (fos != null) {
-                    fos.close();
-                }
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
-        }
-    }
-
-    // Función para buscar un estudiante por su ID
-    private static void buscarEstudiante(Scanner input) {
-        System.out.println("Introduce el id del estudiante a buscar ");
+        System.out.print("Introduce el id: ");
         int id = input.nextInt();
+        input.nextLine(); // Consumir salto de línea
 
-        FileInputStream fis = null;
-        ObjectInputStream ois = null;
-
-        try {
-            fis = new FileInputStream("estudiantes.dat");
-
-            while (fis.available() > 0) {
-                ois = new ObjectInputStream(fis);
-                Estudiante e = (Estudiante) ois.readObject();
-
-                if (e.getId() == id) {
-                    System.out.println(e);
-                }
-            }
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-
-        } finally {
-            try {
-                if (fis != null) {
-                    fis.close();
-                }
-                if (ois != null) {
-                    ois.close();
-                }
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
+        // Verificar si la ID ya existe
+        for (Estudiante e : estudiantes) {
+            if (e.getId() == id) {
+                System.out.println("Error: La ID ya existe. No se añadirá el estudiante.");
+                return;
             }
         }
+
+        System.out.print("Introduce el nombre: ");
+        String nombre = input.nextLine();
+        System.out.print("Introduce la edad: ");
+        int edad = input.nextInt();
+
+        estudiantes.add(new Estudiante(id, nombre, edad));
+        guardarEstudiantes(estudiantes);
+        System.out.println("Estudiante agregado correctamente.");
     }
 
-    // Función para listar todos los estudiantes
-    private static void listarEstudiantes() {
-        FileInputStream fis = null;
-        ObjectInputStream ois = null;
+    private static void buscarEstudiante(Scanner input) {
+        System.out.print("Introduce el id del estudiante a buscar: ");
+        int idBuscar = input.nextInt();
+        ArrayList<Estudiante> estudiantes = cargarEstudiantes();
 
-        try {
-            fis = new FileInputStream("estudiantes.dat");
-
-            while (fis.available() > 0) {
-                ois = new ObjectInputStream(fis);
-                Estudiante e = (Estudiante) ois.readObject();
+        for (Estudiante e : estudiantes) {
+            if (e.getId() == idBuscar) {
                 System.out.println(e);
+                return;
             }
+        }
+        System.out.println("Estudiante no encontrado.");
+    }
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+    private static void listarEstudiantes() {
+        ArrayList<Estudiante> estudiantes = cargarEstudiantes();
+        if (estudiantes.isEmpty()) {
+            System.out.println("No hay estudiantes registrados.");
+            return;
+        }
 
-        } finally {
-            try {
-                if (fis != null) {
-                    fis.close();
-                }
-                if (ois != null) {
-                    ois.close();
-                }
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
+        System.out.println("Lista de estudiantes:");
+        for (Estudiante e : estudiantes) {
+            System.out.println(e);
         }
     }
 
-    // Función para eliminar un estudiante por su ID
     private static void eliminarEstudiante(Scanner input) {
-        System.out.println("Introduce el id del estudiante a eliminar:");
+        System.out.print("Introduce el id del estudiante a eliminar: ");
         int idEliminar = input.nextInt();
+        ArrayList<Estudiante> estudiantes = cargarEstudiantes();
 
-        FileInputStream fisEliminar = null;
-        ObjectInputStream oisEliminar = null;
-        FileOutputStream fosEliminar = null;
-        ObjectOutputStream oosEliminar = null;
-        boolean encontrado = false;
+        boolean eliminado = estudiantes.removeIf(e -> e.getId() == idEliminar);
 
-        try {
-            fisEliminar = new FileInputStream("estudiantes.dat");
-            oisEliminar = new ObjectInputStream(fisEliminar);
-            ArrayList<Estudiante> estudiantes = new ArrayList<>();
-
-            while (fisEliminar.available() > 0) {
-                Estudiante e = (Estudiante) oisEliminar.readObject();
-                if (e.getId() != idEliminar) {
-                    estudiantes.add(e);
-                } else {
-                    encontrado = true;
-                }
-            }
-
-            if (encontrado) {
-                fosEliminar = new FileOutputStream("estudiantes.dat");
-                oosEliminar = new ObjectOutputStream(fosEliminar);
-
-                for (Estudiante e : estudiantes) {
-                    oosEliminar.writeObject(e);
-                }
-                System.out.println("Estudiante eliminado con éxito.");
-            } else {
-                System.out.println("Estudiante no encontrado.");
-            }
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        } finally {
-            try {
-                if (fisEliminar != null) {
-                    fisEliminar.close();
-                }
-                if (oisEliminar != null) {
-                    oisEliminar.close();
-                }
-                if (fosEliminar != null) {
-                    fosEliminar.close();
-                }
-                if (oosEliminar != null) {
-                    oosEliminar.close();
-                }
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
+        if (eliminado) {
+            guardarEstudiantes(estudiantes);
+            System.out.println("Estudiante eliminado correctamente.");
+        } else {
+            System.out.println("No se encontró un estudiante con esa ID.");
         }
     }
 
-    // Función para cambiar la edad de un estudiante por su ID
     private static void cambiarEdad(Scanner input) {
-        System.out.println("Introduce el id del estudiante a cambiar la edad:");
+        System.out.print("Introduce el id del estudiante a cambiar la edad: ");
         int idCambiar = input.nextInt();
+        ArrayList<Estudiante> estudiantes = cargarEstudiantes();
 
-        FileInputStream fisCambiar = null;
-        ObjectInputStream oisCambiar = null;
-        FileOutputStream fosCambiar = null;
-        ObjectOutputStream oosCambiar = null;
-        boolean estudianteEncontrado = false;
-
-        try {
-            fisCambiar = new FileInputStream("estudiantes.dat");
-            oisCambiar = new ObjectInputStream(fisCambiar);
-
-            ArrayList<Estudiante> estudiantes = new ArrayList<>();
-
-            while (fisCambiar.available() > 0) {
-                Estudiante e = (Estudiante) oisCambiar.readObject();
-
-                if (e.getId() == idCambiar) {
-                    estudianteEncontrado = true;
-
-                    System.out.println("Estudiante encontrado: " + e);
-                    System.out.println("Introduce la nueva edad:");
-                    int nuevaEdad = input.nextInt();
-                    e.setEdad(nuevaEdad);
-                }
-
-                estudiantes.add(e);
-            }
-
-            if (estudianteEncontrado) {
-                fosCambiar = new FileOutputStream("estudiantes.dat");
-                oosCambiar = new ObjectOutputStream(fosCambiar);
-
-                for (Estudiante e : estudiantes) {
-                    oosCambiar.writeObject(e);
-                }
-                System.out.println("Edad actualizada con éxito.");
-            } else {
-                System.out.println("Estudiante no encontrado.");
-            }
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        } finally {
-            try {
-                if (fisCambiar != null) {
-                    fisCambiar.close();
-                }
-                if (oisCambiar != null) {
-                    oisCambiar.close();
-                }
-                if (fosCambiar != null) {
-                    fosCambiar.close();
-                }
-                if (oosCambiar != null) {
-                    oosCambiar.close();
-                }
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
+        for (Estudiante e : estudiantes) {
+            if (e.getId() == idCambiar) {
+                System.out.print("Introduce la nueva edad: ");
+                e.setEdad(input.nextInt());
+                guardarEstudiantes(estudiantes);
+                System.out.println("Edad actualizada correctamente.");
+                return;
             }
         }
+        System.out.println("No se encontró un estudiante con esa ID.");
     }
 
-    // Función para cambiar el ID de un estudiante por su ID
     private static void cambiarID(Scanner input) {
-        System.out.println("Introduce el id del estudiante a cambiar:");
+        System.out.print("Introduce el id del estudiante a cambiar: ");
         int idCambiar = input.nextInt();
+        ArrayList<Estudiante> estudiantes = cargarEstudiantes();
 
-        FileInputStream fisCambiar = null;
-        ObjectInputStream oisCambiar = null;
-        FileOutputStream fosCambiar = null;
-        ObjectOutputStream oosCambiar = null;
-        boolean estudianteEncontrado = false;
-
-        try {
-            fisCambiar = new FileInputStream("estudiantes.dat");
-            oisCambiar = new ObjectInputStream(fisCambiar);
-
-            ArrayList<Estudiante> estudiantes = new ArrayList<>();
-
-            while (fisCambiar.available() > 0) {
-                Estudiante e = (Estudiante) oisCambiar.readObject();
-
-                if (e.getId() == idCambiar) {
-                    estudianteEncontrado = true;
-
-                    System.out.println("Estudiante encontrado: " + e);
-                    System.out.println("Introduce el nuevo ID:");
-                    int nuevoID = input.nextInt();
-                    e.setId(nuevoID);
-                }
-
-                estudiantes.add(e);
-            }
-
-            if (estudianteEncontrado) {
-                fosCambiar = new FileOutputStream("estudiantes.dat");
-                oosCambiar = new ObjectOutputStream(fosCambiar);
-
-                for (Estudiante e : estudiantes) {
-                    oosCambiar.writeObject(e);
-                }
-                System.out.println("ID actualizado con éxito.");
-            } else {
-                System.out.println("Estudiante no encontrado.");
-            }
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        } finally {
-            try {
-                if (fisCambiar != null) {
-                    fisCambiar.close();
-                }
-                if (oisCambiar != null) {
-                    oisCambiar.close();
-                }
-                if (fosCambiar != null) {
-                    fosCambiar.close();
-                }
-                if (oosCambiar != null) {
-                    oosCambiar.close();
-                }
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
+        for (Estudiante e : estudiantes) {
+            if (e.getId() == idCambiar) {
+                System.out.print("Introduce el nuevo ID: ");
+                e.setId(input.nextInt());
+                guardarEstudiantes(estudiantes);
+                System.out.println("ID actualizado correctamente.");
+                return;
             }
         }
+        System.out.println("No se encontró un estudiante con esa ID.");
     }
 
-    // Función para calcular la media de edades de los estudiantes
     private static void calcularMediaEdades() {
-        FileInputStream fis = null;
-        ObjectInputStream ois = null;
+        ArrayList<Estudiante> estudiantes = cargarEstudiantes();
 
-        double sumaEdades = 0;
-        int cantidadEstudiantes = 0;
+        if (estudiantes.isEmpty()) {
+            System.out.println("No hay estudiantes registrados.");
+            return;
+        }
 
-        try {
-            fis = new FileInputStream("estudiantes.dat");
-            while (fis.available() > 0) {
-                ois = new ObjectInputStream(fis);
-                Estudiante e = (Estudiante) ois.readObject();
+        double media = estudiantes.stream().mapToInt(Estudiante::getEdad).average().orElse(0);
+        System.out.println("La media de edades de los estudiantes es: " + media);
+    }
 
-                sumaEdades += e.getEdad();
-                cantidadEstudiantes++;
-            }
+    private static void ordenarEstudiantesPorEdad() {
+        ArrayList<Estudiante> estudiantes = cargarEstudiantes();
 
-            if (cantidadEstudiantes > 0) {
-                double mediaEdades = sumaEdades / cantidadEstudiantes;
-                System.out.println("La media de edades de los estudiantes es: " + mediaEdades);
-            } else {
-                System.out.println("No hay estudiantes en el archivo.");
-            }
+        if (estudiantes.isEmpty()) {
+            System.out.println("No hay estudiantes registrados.");
+            return;
+        }
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        } finally {
-            try {
-                if (fis != null) {
-                    fis.close();
-                }
-                if (ois != null) {
-                    ois.close();
-                }
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
+        estudiantes.sort((e1, e2) -> Integer.compare(e1.getEdad(), e2.getEdad()));
+
+        System.out.println("Estudiantes ordenados por edad:");
+        for (Estudiante e : estudiantes) {
+            System.out.println(e);
         }
     }
 
-    // Función para ordenar los estudiantes por edad
-    private static void ordenarEstudiantesPorEdad() {
-        FileInputStream fis = null;
-        ObjectInputStream ois = null;
-
+    private static ArrayList<Estudiante> cargarEstudiantes() {
         ArrayList<Estudiante> estudiantes = new ArrayList<>();
 
-        try {
-            fis = new FileInputStream("estudiantes.dat");
-
-            while (fis.available() > 0) {
-                ois = new ObjectInputStream(fis);
-                Estudiante e = (Estudiante) ois.readObject();
-                estudiantes.add(e);
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("estudiantes.dat"))) {
+            while (true) {
+                try {
+                    estudiantes.add((Estudiante) ois.readObject());
+                } catch (EOFException e) {
+                    break;
+                }
             }
-
-            estudiantes.sort((e1, e2) -> Integer.compare(e1.getEdad(), e2.getEdad()));
-
-            System.out.println("Estudiantes ordenados por edad:");
-            for (Estudiante e : estudiantes) {
-                System.out.println(e);
-            }
-
+        } catch (FileNotFoundException e) {
+            // Archivo no existe, se creará uno nuevo
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-        } finally {
-            try {
-                if (fis != null) {
-                    fis.close();
-                }
-                if (ois != null) {
-                    ois.close();
-                }
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
+            System.out.println("Error al cargar estudiantes: " + e.getMessage());
+        }
+
+        return estudiantes;
+    }
+
+    private static void guardarEstudiantes(ArrayList<Estudiante> estudiantes) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("estudiantes.dat"))) {
+            for (Estudiante e : estudiantes) {
+                oos.writeObject(e);
             }
+        } catch (Exception e) {
+            System.out.println("Error al guardar estudiantes: " + e.getMessage());
         }
     }
 }
