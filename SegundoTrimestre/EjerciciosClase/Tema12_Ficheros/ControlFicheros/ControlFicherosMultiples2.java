@@ -1,4 +1,4 @@
-package SegundoTrimestre.EjerciciosClase.ControlFicheros;
+package SegundoTrimestre.EjerciciosClase.Tema12_Ficheros.ControlFicheros;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

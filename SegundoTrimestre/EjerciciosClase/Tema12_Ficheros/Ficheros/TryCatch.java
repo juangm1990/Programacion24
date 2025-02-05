@@ -1,4 +1,4 @@
-package SegundoTrimestre.EjerciciosClase.Ficheros;
+package SegundoTrimestre.EjerciciosClase.Tema12_Ficheros.Ficheros;
 
 import java.io.FileReader;
 

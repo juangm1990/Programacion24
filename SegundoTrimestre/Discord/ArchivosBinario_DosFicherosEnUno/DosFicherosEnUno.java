@@ -1,4 +1,4 @@
-package SegundoTrimestre.Discord.DosFicherosEnUno;
+package SegundoTrimestre.Discord.ArchivosBinario_DosFicherosEnUno;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -83,10 +83,10 @@ public class DosFicherosEnUno {
                         System.out.println("Error al leer los ficheros: " + e.getMessage());
                     } finally {
                         try {
-                            if (br1 != null) br1.close();
-                            if (br2 != null) br2.close();
-                            if (fr1 != null) fr1.close();
-                            if (fr2 != null) fr2.close();
+                            br1.close();
+                            br2.close();
+                            fr1.close();
+                            fr2.close();
                         } catch (Exception e) {
                             System.out.println("Error al cerrar los ficheros: " + e.getMessage());
                         }
@@ -113,11 +113,11 @@ public class DosFicherosEnUno {
                         System.out.println("Error al leer los ficheros: " + e.getMessage());
                     } finally {
                         try {
-                            if (br1 != null) br1.close();
-                            if (br2 != null) br2.close();
-                            if (fr1 != null) fr1.close();
-                            if (fr2 != null) fr2.close();
-                            if (fw != null) fw.close();
+                            br1.close();
+                            br2.close();
+                            fr1.close();
+                            fr2.close();
+                            fw.close();
                         } catch (Exception e) {
                             System.out.println("Error al cerrar los ficheros: " + e.getMessage());
                         }

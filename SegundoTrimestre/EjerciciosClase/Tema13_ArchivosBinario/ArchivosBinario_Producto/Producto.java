@@ -1,4 +1,4 @@
-package SegundoTrimestre.EjerciciosClase.ArchivosBinario_Producto;
+package SegundoTrimestre.EjerciciosClase.Tema13_ArchivosBinario.ArchivosBinario_Producto;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package SegundoTrimestre.EjerciciosClase.ControlFicheros.ControlFIcherosClases1;
+package SegundoTrimestre.EjerciciosClase.Tema12_Ficheros.ControlFicheros.ControlFIcherosClases1;
 
 public class CocheIDException extends Exception{
     

@@ -1,9 +1,9 @@
-package SegundoTrimestre.Discord.Ficheros_Discord;
+package SegundoTrimestre.Discord.Ficheros_ArchivoTexto;
 
 import java.io.FileReader;
 import java.util.ArrayList;
 
-public class Fichero_Discord {
+public class FicheroArchivoTexto {
     public static void main(String[] args) throws Exception {
 
         // Se declara el objeto FileReader para leer el archivo.
