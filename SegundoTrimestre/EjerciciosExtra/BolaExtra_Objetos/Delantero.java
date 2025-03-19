@@ -15,6 +15,4 @@ public class Delantero extends Jugador implements Entrenable{
         System.out.println("¡Gooooooool!¡Ha marcado el penalti!");
     }
 
-
-
 }
