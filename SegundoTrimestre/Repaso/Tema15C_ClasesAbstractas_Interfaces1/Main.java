@@ -16,10 +16,14 @@ public class Main {
             Jugador jugador = jugadores.get(i);
             System.out.println(jugador.toString()); // Mostrar información
 
-            // Verificar si el jugador implementa Entrenable antes de llamar a entrenar al jugador y el portero entrenar()
-            if (jugador instanceof Entrenable) {
-                ((Entrenable) jugador).entrenar();
-            }
+                // Tenemos que comprobar si es Portero/Delantero y llamarlo para la instancia entrenar()
+                if (jugador instanceof Portero) {
+                    ((Portero) jugador).entrenar();
+                }
+
+                else if (jugador instanceof Delantero) {
+                    ((Delantero) jugador).entrenar();
+                }
 
             jugador.accionEspecial(); // Ejecutar acción especial
             System.out.println(); // Espacio para mejor visualización en la consola
