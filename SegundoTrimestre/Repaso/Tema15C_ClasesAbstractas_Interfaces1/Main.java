@@ -1,4 +1,4 @@
-package SegundoTrimestre.EjerciciosExtra.BolaExtra_Objetos;
+package SegundoTrimestre.Repaso.Tema15C_ClasesAbstractas_Interfaces1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,4 +27,3 @@ public class Main {
         }
     }
 }
-
