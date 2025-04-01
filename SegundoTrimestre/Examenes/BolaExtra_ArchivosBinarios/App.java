@@ -71,7 +71,7 @@ public class App {
             fosParticipantes = new FileOutputStream("Participantes.dat", true);  // "true" para agregar al archivo
             oosParticipantes = new ObjectOutputStream(fosParticipantes);
 
-            do {
+           do {
                 System.out.println("Introduce datos (id#nombre#email): ");
                 linea = input.nextLine();
                 if (!linea.equals("fin")) {
@@ -79,19 +79,14 @@ public class App {
                     participante = new Participantes(datos[0], datos[1], datos[2]);
                     participantes.add(participante);
                     oosParticipantes.writeObject(participante); // Escribir al archivo
-                    System.out.println("¿Parar? Escribe 'fin' para terminar.");
+                    System.out.println("¿Parar?  Escribe 'fin' para terminar.");
                 }
             } while (!linea.equals("fin"));
         } catch (Exception e) {
             System.out.println("Error al agregar participante: " + e.getMessage());
         } finally {
             try {
-                if (oosParticipantes != null) {
-                    oosParticipantes.close();
-                }
-                if (fosParticipantes != null) {
-                    fosParticipantes.close();
-                }
+
             } catch (Exception e) {
                 System.out.println("Error al cerrar los flujos: " + e.getMessage());
             }
@@ -124,12 +119,7 @@ public class App {
             System.out.println("Error al agregar partida: " + e.getMessage());
         } finally {
             try {
-                if (oosPartidas != null) {
-                    oosPartidas.close();
-                }
-                if (fosPartidas != null) {
-                    fosPartidas.close();
-                }
+
             } catch (Exception e) {
                 System.out.println("Error al cerrar los flujos: " + e.getMessage());
             }
