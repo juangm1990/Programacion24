@@ -1,4 +1,5 @@
-package SegundoTrimestre.EjerciciosExtra.ArchivoBinario_ModificarArchivo;
+package SegundoTrimestre.ArchivosBinarios.ArchivosBinarios_ModificarArchivo;
+
 
 
 import java.io.Serializable;

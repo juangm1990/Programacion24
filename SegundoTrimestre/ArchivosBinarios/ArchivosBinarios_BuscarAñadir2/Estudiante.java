@@ -1,19 +1,32 @@
-package SegundoTrimestre.Discord.ArchivosBinario_Estudiantes;
+package SegundoTrimestre.ArchivosBinarios.ArchivosBinarios_BuscarAñadir2;
+
 
 import java.io.Serializable;
 
 public class Estudiante implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     
     private int id;
     private String nombre;
     private int edad;
 
-    private static final long serialVersionUID = 1L;
-
     public Estudiante(int id, String nombre, int edad) {
         this.id = id;
         this.nombre = nombre;
         this.edad = edad;
+    }
+
+    public Estudiante() {
+        this.id = 0;
+        this.nombre = null;
+        this.edad = 0;
+    }
+
+    public Estudiante(Estudiante copia) {
+        this.id = copia.id;
+        this.nombre = copia.nombre;
+        this.edad = copia.edad;
     }
 
     public int getId() {
@@ -35,12 +48,11 @@ public class Estudiante implements Serializable {
     public int getEdad() {
         return edad;
     }
-
+    
     public void setEdad(int edad) {
         this.edad = edad;
     }
 
-    
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -72,9 +84,9 @@ public class Estudiante implements Serializable {
         return true;
     }
 
-
     @Override
     public String toString() {
         return "Estudiante [id=" + id + ", nombre=" + nombre + ", edad=" + edad + "]";
     }
 }
+

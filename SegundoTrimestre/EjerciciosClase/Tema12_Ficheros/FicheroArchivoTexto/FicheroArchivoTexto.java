@@ -1,4 +1,4 @@
-package SegundoTrimestre.Discord.Ficheros_ArchivoTexto;
+package SegundoTrimestre.EjerciciosClase.Tema12_Ficheros.FicheroArchivoTexto;
 
 import java.io.FileReader;
 import java.util.ArrayList;

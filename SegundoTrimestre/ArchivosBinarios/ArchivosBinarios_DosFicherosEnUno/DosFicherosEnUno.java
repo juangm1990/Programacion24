@@ -1,4 +1,5 @@
-package SegundoTrimestre.Discord.ArchivosBinario_DosFicherosEnUno;
+package SegundoTrimestre.ArchivosBinarios.ArchivosBinarios_DosFicherosEnUno;
+
 
 import java.io.BufferedReader;
 import java.io.FileReader;

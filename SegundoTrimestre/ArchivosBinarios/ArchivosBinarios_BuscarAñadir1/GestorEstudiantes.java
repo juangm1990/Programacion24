@@ -1,4 +1,4 @@
-package SegundoTrimestre.Discord.ArchivosBinario_BuscarAñadir1;
+package SegundoTrimestre.ArchivosBinarios.ArchivosBinarios_BuscarAñadir1;
 
 
 import java.io.FileInputStream;
@@ -19,7 +19,6 @@ public class GestorEstudiantes {
             System.out.println("0.- Salir");
             System.out.println("1.- Añadir nuevos estudiantes");
             System.out.println("2.- Listar los estudiantes guardados");
-            System.out.println("3.- Buscar un estudiante por su ID");
             System.out.print("Elige una opción: ");
             opcion = input.nextInt();
 
@@ -88,11 +87,6 @@ public class GestorEstudiantes {
                             System.out.println(e.getMessage());
                         }
                     }
-
-                    break;
-
-                case 3:
-
 
                     break;
 

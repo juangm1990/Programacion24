@@ -1,4 +1,5 @@
-package SegundoTrimestre.Discord.ArchivosBinario_Estudiantes;
+package SegundoTrimestre.ArchivosBinarios.ArchivosBinarios_UnionVocales;
+
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

@@ -1,4 +1,5 @@
-package SegundoTrimestre.Discord.ArchivosBinario_BuscarAñadir2;
+package SegundoTrimestre.ArchivosBinarios.ArchivosBinarios_BuscarAñadir2;
+
 
 import java.io.*;
 import java.util.ArrayList;

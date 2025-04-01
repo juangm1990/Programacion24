@@ -1,4 +1,4 @@
-package SegundoTrimestre.Repaso.Tema15C_ClasesAbstractas_Interfaces1;
+package SegundoTrimestre.TareasPracticas.Tema15C_ClasesAbstractas_Interfaces;
 
 public class Portero extends Jugador implements Entrenable{
     

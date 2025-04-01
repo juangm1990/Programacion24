@@ -1,5 +1,4 @@
-package SegundoTrimestre.Discord.ArchivosBinario_BuscarAñadir1;
-
+package SegundoTrimestre.ArchivosBinarios.ArchivosBinarios_BuscarAñadir1;
 
 import java.io.Serializable;
 
@@ -89,4 +88,3 @@ public class Estudiante implements Serializable {
         return "Estudiante [id=" + id + ", nombre=" + nombre + ", edad=" + edad + "]";
     }
 }
-

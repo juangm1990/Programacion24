@@ -1,9 +1,10 @@
-package SegundoTrimestre.Discord.ArchivosBinario_UnirDosFicheros;
+package SegundoTrimestre.ArchivosBinarios.ArchivosBinarios_CopiarContenido;
 
 import java.io.*;
 import java.util.Scanner;
 
-public class UnirDosFicheros{
+public class CopiarContenidoFicheros {
+  
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Introduce la ruta del primer fichero: ");
@@ -139,4 +140,6 @@ public class UnirDosFicheros{
             System.out.println("Error al leer el archivo binario: " + e.getMessage());
         }
     }
+
+
 }
