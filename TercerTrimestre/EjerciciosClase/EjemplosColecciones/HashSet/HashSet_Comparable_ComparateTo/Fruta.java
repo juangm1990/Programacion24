@@ -31,8 +31,22 @@ public class Fruta implements Comparable<Fruta> {
 
     @Override
     public int hashCode() {
+        
         return nombre.toLowerCase().hashCode();
     }
 
-    // Misma altura y nombre (duplicados en función de un criterio)
+    // Misma altura y nombre (duplicados en función de un criterio) HASHSET
+    // TENEMOS UNA CLASE TIENE UN ATRIBUTO QUE TIENE UN ARRAY, IDENTIFICAR DOS OBJETOS DE LA MISMA CLASE SI EN ESE ARRAYLIST TIENE 2 ELEMENTOS QUE SE REPITEN. 
+    // HAY DEFINIR UNA FUNCION PARA QUE BUSCAR SI TIENE DOS ELEMENTOS IGUALES. SABER COMO FUNCIONA IQUAL Y HASCODE QUE LOS DOS ARRAY SEAN IGUALES, COGER 3 VARIABLES Y COMPARAR
+
+    //TREE SET
+    /* public int compareTo (Producto o){
+    IF (this.precio<o.precio)return -1;
+    else if (this.precio==o.precio)
+    return 0;
+    else return 1; 
+    }
+     */ 
+
+
 }
