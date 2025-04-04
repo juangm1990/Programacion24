@@ -33,4 +33,6 @@ public class Fruta implements Comparable<Fruta> {
     public int hashCode() {
         return nombre.toLowerCase().hashCode();
     }
+
+    // Misma altura y nombre (duplicados en función de un criterio)
 }

@@ -27,7 +27,7 @@ public class TreeSetConComparableScanner {
 
         sc.close();
 
-        System.out.println("\nFrutas ordenadas:");
+        System.out.println("Frutas ordenadas:");
         for (Fruta fruta : frutas) {
             System.out.println(fruta);
         }

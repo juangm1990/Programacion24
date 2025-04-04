@@ -12,8 +12,8 @@ public class Fruta implements Comparable<Fruta> {
     }
 
     @Override
-    public int compareTo(Fruta otra) {
-        return this.nombre.compareTo(otra.nombre); // Orden alfabético
+    public int compareTo(Fruta otrafruta) {
+        return this.nombre.compareTo(otrafruta.nombre); // Orden alfabético ASCII
     }
 
     @Override

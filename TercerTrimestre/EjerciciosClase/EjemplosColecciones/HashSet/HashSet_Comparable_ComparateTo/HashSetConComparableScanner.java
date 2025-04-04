@@ -27,7 +27,7 @@ public class HashSetConComparableScanner {
 
         sc.close();
 
-        System.out.println("\nFrutas introducidas (sin duplicados):");
+        System.out.println("Frutas introducidas (sin duplicados):");
         for (Fruta fruta : frutas) {
             System.out.println(fruta);
         }
