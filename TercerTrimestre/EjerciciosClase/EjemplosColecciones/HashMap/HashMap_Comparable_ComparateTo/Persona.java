@@ -1,4 +1,4 @@
-package TercerTrimestre.EjerciciosClase.EjemploColecciones.TreeMap.TreeMap_Comparable_ComparateTo;
+package TercerTrimestre.EjerciciosClase.EjemplosColecciones.HashMap.HashMap_Comparable_ComparateTo;
 
 public class Persona implements Comparable<Persona> {
     private String nombre;
@@ -13,7 +13,7 @@ public class Persona implements Comparable<Persona> {
 
     @Override
     public int compareTo(Persona otra) {
-        return this.nombre.compareToIgnoreCase(otra.nombre); // Orden alfabético
+        return this.nombre.compareToIgnoreCase(otra.nombre);
     }
 
     @Override

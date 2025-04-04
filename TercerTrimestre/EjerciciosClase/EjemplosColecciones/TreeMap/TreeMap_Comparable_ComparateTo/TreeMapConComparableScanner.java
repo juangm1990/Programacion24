@@ -1,4 +1,4 @@
-package TercerTrimestre.EjerciciosClase.EjemploColecciones.TreeMap.TreeMap_Comparable_ComparateTo;
+package TercerTrimestre.EjerciciosClase.EjemplosColecciones.TreeMap.TreeMap_Comparable_ComparateTo;
 
 
 import java.util.Map;

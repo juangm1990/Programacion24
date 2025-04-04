@@ -1,4 +1,4 @@
-package TercerTrimestre.EjerciciosClase.EjemploColecciones.TreeMap.TreeMap_Integrer;
+package TercerTrimestre.EjerciciosClase.EjemplosColecciones.TreeMap.TreeMap_Integrer;
 
 
 import java.util.Map;

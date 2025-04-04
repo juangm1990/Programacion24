@@ -1,10 +1,10 @@
-package TercerTrimestre.EjerciciosClase.EjemploColecciones.TreeSet.TreeSet_String;
+package TercerTrimestre.EjerciciosClase.EjemplosColecciones.HashSet.HashSet_String;
 
-import java.util.TreeSet;
+import java.util.HashSet;
 
-public class TreeSetConString {
+public class HashSetConString {
     public static void main(String[] args) {
-        TreeSet<String> nombres = new TreeSet<>();
+        HashSet<String> nombres = new HashSet<>();
 
         nombres.add("Carlos");
         nombres.add("Ana");
@@ -12,7 +12,7 @@ public class TreeSetConString {
         nombres.add("Bea");
         nombres.add("Ana"); // Duplicado, no se añade
 
-        System.out.println("Nombres ordenados alfabéticamente:");
+        System.out.println("Nombres introducidos (sin orden y sin duplicados):");
         for (String nombre : nombres) {
             System.out.println(nombre);
         }

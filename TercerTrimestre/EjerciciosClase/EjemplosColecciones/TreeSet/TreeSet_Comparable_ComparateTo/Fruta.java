@@ -1,4 +1,4 @@
-package TercerTrimestre.EjerciciosClase.EjemploColecciones.TreeSet.TreeSet_Comparable_ComparateTo;
+package TercerTrimestre.EjerciciosClase.EjemplosColecciones.TreeSet.TreeSet_Comparable_ComparateTo;
 
 public class Fruta implements Comparable<Fruta> {
     private String nombre;

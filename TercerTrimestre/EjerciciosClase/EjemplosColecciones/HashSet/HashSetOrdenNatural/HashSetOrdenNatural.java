@@ -1,10 +1,10 @@
-package TercerTrimestre.EjerciciosClase.EjemploColecciones.TreeSet.TreeSetOrdenNatural;
+package TercerTrimestre.EjerciciosClase.EjemplosColecciones.HashSet.HashSetOrdenNatural;
 
-import java.util.TreeSet;
+import java.util.HashSet;
 
-public class TreeSetOrdenNatural {
+public class HashSetOrdenNatural {
     public static void main(String[] args) {
-        TreeSet<Integer> numeros = new TreeSet<>();
+        HashSet<Integer> numeros = new HashSet<>();
 
         numeros.add(15);
         numeros.add(3);
@@ -12,7 +12,7 @@ public class TreeSetOrdenNatural {
         numeros.add(1);
         numeros.add(9); // Duplicado, no se añade
 
-        System.out.println("Números ordenados (orden natural):");
+        System.out.println("Números introducidos (sin orden y sin duplicados):");
         for (Integer numero : numeros) {
             System.out.println(numero);
         }

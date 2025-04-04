@@ -1,4 +1,4 @@
-package TercerTrimestre.EjerciciosClase.EjemploColecciones.TreeMap.TreeMap_String;
+package TercerTrimestre.EjerciciosClase.EjemplosColecciones.TreeMap.TreeMap_String;
 
 
 import java.util.Map;

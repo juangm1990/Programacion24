@@ -1,4 +1,4 @@
-package TercerTrimestre.EjerciciosClase.EjemploColecciones.TreeMap.TreeMapOrdenNatural;
+package TercerTrimestre.EjerciciosClase.EjemplosColecciones.TreeMap.TreeMapOrdenNatural;
 
 import java.util.Map;
 import java.util.TreeMap;
