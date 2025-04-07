@@ -26,8 +26,8 @@ public class JuegoFisico extends Videojuego {
 
     @Override
     public String toString() {
-        return "Juegofisico [id=" + id + ", gastosEnvio=" + gastosEnvio + ", titulo=" + titulo + ", precio=" + precio
-                + ", genero=" + genero + "]";
+        return "Juegofisico: ID = " + id + ", gastosEnvio = " + gastosEnvio + ", titulo = " + titulo + ", precio = " + precio
+                + ", genero = " + genero;
     }
 
   
