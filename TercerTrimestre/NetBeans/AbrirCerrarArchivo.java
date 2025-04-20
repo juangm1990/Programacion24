@@ -3,12 +3,14 @@
 ///////////////////////////////////////
 Scroll pane  
     - Text area
-Menu
+Menu Bar (Crear iconos para archivos)
     - Menu iten / Check Box
 Label
     - Contador letras
 ///////////////////////////////////////
 /// Cambiar jTextArea1 a jTextArea
+///////////////////////////////////////
+/// Crear Clase texto en el Main
 ///////////////////////////////////////
 
 1. RUTA DEL ARCHIVO 
@@ -74,7 +76,17 @@ private void jCheckBoxMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {
         }
     }
 
+/////////////////////////
+/// JtextArea
+////////////////////////
 
+    static void read(BufferedReader br, Object object) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    static void write(BufferedWriter bw) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
 
 5. CONTAR CARACTERES
