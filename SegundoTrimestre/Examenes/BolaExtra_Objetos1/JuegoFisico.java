@@ -1,7 +1,6 @@
 package SegundoTrimestre.Examenes.BolaExtra_Objetos1;
 
 public class JuegoFisico extends Videojuego {
-    
     private double gastosEnvio;
 
     public JuegoFisico(int id, String titulo, double precio, String genero, double gastosEnvio) {
@@ -9,29 +8,17 @@ public class JuegoFisico extends Videojuego {
         this.gastosEnvio = gastosEnvio;
     }
 
+    @Override
+    public double calcularPrecioFinal() {
+        return precio + gastosEnvio;
+    }
+
     public double getGastosEnvio() {
         return gastosEnvio;
     }
 
-    public void setGastosEnvio(double gastosEnvio) {
-        this.gastosEnvio = gastosEnvio;
-    }
-
-    @Override
-    public  double calcularPrecioFinal(){
-        return precio + gastosEnvio;
-        
-    }
-
-
     @Override
     public String toString() {
-        return "Juegofisico: ID = " + id + ", gastosEnvio = " + gastosEnvio + ", titulo = " + titulo + ", precio = " + precio
-                + ", genero = " + genero;
+        return super.toString() + ", Formato: Físico, Gastos de envío: " + gastosEnvio;
     }
-
-  
-
-    
 }
-

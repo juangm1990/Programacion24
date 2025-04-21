@@ -13,46 +13,26 @@ public abstract class Videojuego {
         this.genero = genero;
     }
 
+    public abstract double calcularPrecioFinal();
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getTitulo() {
         return titulo;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
     public double getPrecio() {
         return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
     }
 
     public String getGenero() {
         return genero;
     }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-
-    public abstract double calcularPrecioFinal();
-
-
     @Override
     public String toString() {
-        return "Videojuego [id=" + id + ", titulo=" + titulo + ", precio=" + precio + ", genero=" + genero + "]";
+        return "ID: " + id + ", Título: " + titulo + ", Precio base: " + precio + ", Género: " + genero;
     }
- 
 }
-
