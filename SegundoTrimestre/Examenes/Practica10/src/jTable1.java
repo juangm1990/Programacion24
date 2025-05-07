@@ -1,3 +1,4 @@
+package SegundoTrimestre.Examenes.Practica10.src;
 
 import javax.swing.table.DefaultTableCellRenderer;
 
