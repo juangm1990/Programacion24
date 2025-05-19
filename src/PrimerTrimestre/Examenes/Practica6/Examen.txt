@@ -1,0 +1,39 @@
+/*
+Prueba práctica 6
+
+Una agencia de alquiler de vehículos dispone de autobuses y tractores. 
+
+El alquiler de autobuses se factura por kilómetros con estas características:
+
+- El precio por kilómetro.
+- La cantidad de kilómetros que tiene el autobús cuando se alquila.
+- La cantidad de kilómetros que tiene el autobús cuando se devuelve.
+
+Por otro lado, el alquiler de tractores se factura por días. Con estas características:
+
+- El precio por día.
+- La fecha de su alquiler (obtenida de la fecha y hora del sistema al alquilar).
+- La fecha de su devolución (obtenida de la fecha y hora del sistema al devolver).
+
+Para un vehículo, se debe guardar su matrícula y conocer si el vehículo se encuentra alquilado. 
+Por defecto, a la hora de crear el vehículo, el estado del vehículo será de disponible.
+
+Cuando se alquila un vehículo, el estado del vehículo pasará a estar alquilado. 
+Si dicho vehículo ya se encontraba alquilado, devolverá un error y mostrará un mensaje.
+
+Cuando se devuelva un vehículo, pasará a estar disponible y se calculará el importe a pagar por el alquiler. 
+Para devolver el vehículo, se deberá comprobar previamente que se encuentra alquilado, en otro caso, 
+devolverá un error y mostrará un mensaje.
+
+- Realiza el diagrama de clases correspondiente al enunciado.
+
+- Implementa la solución del enunciado implementando un menú de opciones para alquilar 
+y devolver cada uno de los vehículos, así como obtener el precio de alquiler en cada caso.
+
+RECURSOS:
+
+- Clase LocalDateTime -> Representa una fecha y tiempo en formato (yyyy-MM-dd-HH-mm-ss-ns)
+- LocalDateTime.now() -> Devuelve la fecha y hora actual.
+- (int)ChronoUnit.DAYS.between(fecha1, fecha2) -> Devuelve los días entre ambas fechas 
+(las fechas deben de ser de tipo LocalDateTime).
+*/

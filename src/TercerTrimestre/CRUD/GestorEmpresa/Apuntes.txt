@@ -1,0 +1,121 @@
+ID INCREMENTABLE
+----------------
+
+-- Crear base de datos
+CREATE DATABASE Empresa;
+USE Empresa;
+
+-- Crear tabla Empleados
+CREATE TABLE Empleados (
+    ID_Empleado INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(50) NOT NULL,
+    Apellidos VARCHAR(50) NOT NULL,
+    Puesto VARCHAR(50) NOT NULL,
+    Salario DOUBLE NOT NULL
+);
+
+
+
+COMPILAR TODAS LAS CLASES
+-------------------------
+javac -cp ".;lib/mysql-connector-j-9.3.0.jar" src/*.java
+
+
+-- APUNTES
+-- -------
+
+-- Crear la base de datos
+CREATE DATABASE NombreDeLaBase;
+
+-- Usar la base de datos
+USE NombreDeLaBase;
+
+-- Crear una tabla genérica con distintos tipos de campos
+CREATE TABLE NombreDeLaTabla (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,             -- ID con incremento automático (se genera solo)
+    id INT PRIMARY KEY,                            -- ID manual (tú lo defines al insertar)
+
+    campo_texto VARCHAR(100) NOT NULL,             -- Texto corto obligatorio
+    campo_numero INT,                              -- Número entero (edad, unidades, etc.)
+    campo_decimal DOUBLE,                          -- Número decimal (precio, medida...)
+    campo_booleano BOOLEAN DEFAULT TRUE,           -- Booleano (true o false, por defecto TRUE)
+    campo_fecha DATE,                              -- Fecha (formato: YYYY-MM-DD)
+    campo_fecha_hora DATETIME,                     -- Fecha y hora juntas (YYYY-MM-DD HH:MM:SS)
+
+    campo_foraneo INT,                             -- Clave foránea (relación con otra tabla)
+    FOREIGN KEY (campo_foraneo) REFERENCES OtraTabla(id) -- Relación con otra tabla
+);
+
+
+ENUNCIADO ACTIVIDAD
+-------------------
+
+Gestión de empleados (DAO) 
+
+Desarrollar una aplicación que permita gestionar los empleados de una empresa aplicando el patrón DAO para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en una base de datos.
+
+Crear una base de datos llamada Empresa con una tabla Empleados que incluya los siguientes campos:
+
+    ID_Empleado (INT, PRIMARY KEY, AUTO_INCREMENT)
+
+    Nombre (VARCHAR(50), NOT NULL)
+
+    Apellidos (VARCHAR(50), NOT NULL)
+
+    Puesto (VARCHAR(50), NOT NULL)
+
+    Salario (DOUBLE, NOT NULL)
+
+
+Clases Obligatorias:
+
+1. ConexionBD:
+
+Clase para gestionar la conexión a la base de datos.
+Métodos:
+
+    conectar(): Abre la conexión.
+
+    desconectar(): Cierra la conexión.
+
+2. Empleado:
+
+Clase que representa a los empleados (entidad).
+Atributos:
+
+    id, nombre, apellidos, puesto, salario
+
+Métodos:
+
+    Getters y setters para cada atributo.
+
+3. EmpleadoDAO:
+
+Clase que contiene los métodos CRUD (Data Access Object).
+Métodos:
+
+    insertar(Empleado empleado): Añadir un nuevo empleado.
+
+    obtenerTodosAscendente(): Listar empleados en orden ascendente.
+
+    obtenerTodosDescendente(): Listar empleados en orden descendente.
+
+    modificar(Empleado empleado): Modificar los datos de un empleado.
+
+    eliminar(int id): Eliminar un empleado por su ID.
+
+    buscarPorId(int id): Buscar un empleado por su ID.
+
+    resetearBaseDeDatos(): Eliminar todos los registros y reiniciar el contador de ID.
+
+4. GestorEmpresa:
+
+Clase principal para interactuar con la aplicación.
+Métodos:
+
+    main(): Punto de entrada de la aplicación.
+
+    mostrarEmpleados(): Imprime todos los empleados registrados.
+
+    Menú con opciones para realizar todas las operaciones de gestión.

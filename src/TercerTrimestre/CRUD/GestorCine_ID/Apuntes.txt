@@ -1,0 +1,207 @@
+ID MANUAL
+---------
+
+-- Crear base de datos
+CREATE DATABASE CineManual;
+
+-- Usar la base de datos
+USE CineManual;
+
+-- Tabla de películas con ID manual
+CREATE TABLE Peliculas (
+    ID_Pelicula INT PRIMARY KEY,
+    Titulo VARCHAR(100) NOT NULL,
+    Genero VARCHAR(50) NOT NULL,
+    Duracion INT NOT NULL
+);
+
+-- Tabla de salas con ID manual
+CREATE TABLE Salas (
+    ID_Sala INT PRIMARY KEY,
+    Nombre VARCHAR(50) NOT NULL,
+    Capacidad INT NOT NULL
+);
+
+-- Tabla de reservas con ID manual y claves foráneas
+CREATE TABLE Reservas (
+    ID_Reserva INT PRIMARY KEY,
+    ID_Pelicula INT NOT NULL,
+    ID_Sala INT NOT NULL,
+    Fecha DATE NOT NULL,
+    Hora TIME NOT NULL,
+    Nombre_Cliente VARCHAR(100) NOT NULL,
+    Asientos_Reservados INT NOT NULL,
+    FOREIGN KEY (ID_Pelicula) REFERENCES Peliculas(ID_Pelicula),
+    FOREIGN KEY (ID_Sala) REFERENCES Salas(ID_Sala)
+);
+
+
+
+COMPILAR TODAS LAS CLASES
+-------------------------
+javac -cp ".;lib/mysql-connector-j-9.3.0.jar" src/*.java
+
+
+
+-- APUNTES
+-- -------
+
+-- Crear la base de datos
+CREATE DATABASE NombreDeLaBase;
+
+-- Usar la base de datos
+USE NombreDeLaBase;
+
+-- Crear una tabla genérica con distintos tipos de campos
+CREATE TABLE NombreDeLaTabla (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,             -- ID con incremento automático (se genera solo)
+    id INT PRIMARY KEY,                            -- ID manual (tú lo defines al insertar)
+
+    campo_texto VARCHAR(100) NOT NULL,             -- Texto corto obligatorio
+    campo_numero INT,                              -- Número entero (edad, unidades, etc.)
+    campo_decimal DOUBLE,                          -- Número decimal (precio, medida...)
+    campo_booleano BOOLEAN DEFAULT TRUE,           -- Booleano (true o false, por defecto TRUE)
+    campo_fecha DATE,                              -- Fecha (formato: YYYY-MM-DD)
+    campo_fecha_hora DATETIME,                     -- Fecha y hora juntas (YYYY-MM-DD HH:MM:SS)
+
+    campo_foraneo INT,                             -- Clave foránea (relación con otra tabla)
+    FOREIGN KEY (campo_foraneo) REFERENCES OtraTabla(id) -- Relación con otra tabla
+);
+
+
+ENUNCIADO ACTIVIDAD
+-------------------
+
+Gestión de cines 
+
+Desarrollar una aplicación que permita gestionar las reservas de una sala de cine. La aplicación debe estar correctamente estructurada, aplicando el patrón DAO.
+
+Base de Datos: 
+
+    Tabla Peliculas:
+
+        ID_Pelicula (INT, PRIMARY KEY, AUTO_INCREMENT)
+
+        Titulo (VARCHAR(100), NOT NULL)
+
+        Genero (VARCHAR(50), NOT NULL)
+
+        Duracion (INT, NOT NULL) - (Duración en minutos)
+
+    Tabla Salas:
+
+        ID_Sala (INT, PRIMARY KEY, AUTO_INCREMENT)
+
+        Nombre (VARCHAR(50), NOT NULL)
+
+        Capacidad (INT, NOT NULL)
+
+    Tabla Reservas:
+
+        ID_Reserva (INT, PRIMARY KEY, AUTO_INCREMENT)
+
+        ID_Pelicula (INT, FOREIGN KEY, NOT NULL)
+
+        ID_Sala (INT, FOREIGN KEY, NOT NULL)
+
+        Fecha (DATE, NOT NULL)
+
+        Hora (TIME, NOT NULL)
+
+        Nombre_Cliente (VARCHAR(100), NOT NULL)
+
+        Asientos_Reservados (INT, NOT NULL)
+
+Clases Obligatorias:
+
+    ConexionBD
+
+        Clase para gestionar la conexión a la base de datos.
+
+        Métodos: conectar() y desconectar().
+
+    Pelicula (Entidad)
+
+        Atributos: id, titulo, genero, duracion.
+
+        Métodos: getters y setters.
+
+    Sala (Entidad)
+
+        Atributos: id, nombre, capacidad.
+
+        Métodos: getters y setters.
+
+    Reserva (Entidad)
+
+        Atributos: id, pelicula, sala, fecha, hora, nombreCliente, asientosReservados.
+
+        Métodos: getters y setters.
+
+    PeliculaDAO
+
+        Métodos CRUD para gestionar las películas.
+
+    SalaDAO
+
+        Métodos CRUD para gestionar las salas.
+
+    ReservaDAO
+
+        Métodos CRUD para gestionar las reservas.
+
+    GestorCine
+
+        Clase principal para interactuar con la aplicación.
+
+        Métodos:
+
+            main(): Punto de entrada de la aplicación.
+
+            mostrarMenu(): Muestra las opciones del menú al usuario.
+
+            registrarPelicula(): Permite registrar una nueva película.
+
+            listarPeliculas(): Muestra todas las películas disponibles.
+
+            registrarSala(): Permite registrar una nueva sala.
+
+            listarSalas(): Muestra todas las salas disponibles.
+
+            registrarReserva(): Permite registrar una nueva reserva.
+
+            listarReservas(): Muestra todas las reservas registradas.
+
+            buscarReservasPorPelicula(): Permite buscar reservas por título de película.
+
+Validaciones:
+
+    En la tabla Reservas, el campo Asientos_Reservados no debe superar la capacidad de la sala seleccionada.
+
+    No se deben registrar reservas para películas que no existen.
+
+    No se deben registrar reservas en salas que no existen.
+
+    Verificar que la fecha de la reserva no esté en el pasado.
+
+Modo de Ejecución:
+
+    El usuario debe poder interactuar con la aplicación a través de un menú en consola:
+
+        Registrar una nueva película.
+
+        Listar todas las películas.
+
+        Registrar una nueva sala.
+
+        Listar todas las salas.
+
+        Registrar una nueva reserva.
+
+        Listar todas las reservas.
+
+        Buscar reservas por título de película.
+
+        Salir de la aplicación.
+

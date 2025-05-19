@@ -1,0 +1,43 @@
+Prueba práctica 10 - Gestión de reservas de pistas de pádel
+-----------------------------------------------------------
+
+Crea una aplicación gráfica en Java que permita gestionar 6 pistas de pádel. La aplicación debe incluir:
+
+    Un formulario en la parte superior para añadir reservas (nombre, fecha, hora, pista y duración de 1h, 1h30 o 2h).
+    Un calendario tipo tabla que muestre el estado de cada pista por hora (de 09:00 a 20:00).
+
+    Las celdas deben estar:
+
+        🟩 Verdes si la hora está libre.
+
+        🟥 Rojas si la hora está ocupada (muestra el nombre del jugador).
+    Al hacer clic sobre una hora libre, se podrá reservar directamente desde un formulario flotante.
+    Al hacer clic sobre una hora ocupada, se debe preguntar si quieres cancelar la reserva.
+    Toda la información se debe guardar y cargar desde una base de datos MySQL.
+    Debe incluir un botón para cambiar de día y ver las reservas de cualquier fecha.
+
+
+Prueba práctica 10 - Recuperación - Gestión de Entradas en Salas de Cine
+------------------------------------------------------------------------
+
+Desarrolla una aplicación gráfica en Java (Swing) que permita gestionar las reservas de butacas en tres salas de cine. La aplicación debe permitir:
+
+    Añadir reservas indicando el nombre del cliente, la fecha, la hora, la sala y el número de butaca.
+
+    Visualizar en pantalla una matriz de butacas (5 filas x 10 columnas) donde:
+
+        🟩 Las butacas libres se muestran en verde.
+
+        🟥 Las butacas ocupadas se muestran en rojo, con el nombre del cliente.
+
+    Realizar reservas de dos formas:
+
+        Mediante el formulario superior, indicando todos los datos y pulsando “Guardar Reserva”.
+
+        Pulsando sobre una butaca libre directamente en la matriz.
+
+    Cancelar una reserva haciendo clic sobre una butaca ocupada.
+
+    Cambiar de día, hora o sala mediante los controles del formulario y pulsar el botón “Actualizar vista” para ver las reservas correspondientes.
+
+

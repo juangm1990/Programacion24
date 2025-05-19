@@ -1,0 +1,39 @@
+/*
+Prueba práctica 5
+
+Desarrolla una aplicación Java para gestionar los datos de los empleados de una empresa.
+
+Cada empleado debe tener asociado un único contrato laboral, además de un nombre, apellidos y teléfono. 
+El contrato debe contener información como el salario, el tipo de jornada (a tiempo completo o parcial), 
+y cualquier otra cláusula relevante.
+
+Realiza en papel el diagrama de clases, así como, para cada una de las clases, crear un constructor por defecto, 
+al menos un constructor por parámetros, un constructor de copia, sus getters, setters y toString.
+
+Implementa el código necesario cumpliendo las siguientes validaciones:
+
+No se permitirá almacenar datos que no cumplan estas validaciones.
+
+- Empleado:
+  - Nombre: Mínimo 3 y máximo 20 caracteres
+  - Apellidos: Mínimo 3 y máximo 60 caracteres
+  - Teléfono: +34658745896. Comienza por +34 y contiene 12 caracteres.
+  
+- Contrato:
+  - Salario: Mayor a cero
+  - Tipo jornada: completo o parcial
+  - Cláusulas: Máximo 500 caracteres
+
+En caso de crear un objeto y no cumplirse alguna de las validaciones, se almacenarán los datos por defecto para ese objeto.
+
+En caso de actualizar un objeto y no cumplirse alguna de las validaciones, 
+se dejará con los datos que ya tenía sin actualizar.
+
+Realiza en el main la creación de diferentes objetos y testea la aplicación con al menos las siguientes pruebas:
+
+- Crear un contrato y un empleado con datos válidos.
+- Crear un contrato y un empleado con datos no válidos.
+- Modificar un contrato y un empleado con datos válidos.
+- Modificar un contrato y un empleado con datos no válidos.
+- Mostrar el salario de un empleado.
+*/
