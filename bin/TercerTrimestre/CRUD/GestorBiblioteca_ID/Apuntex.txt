@@ -1,0 +1,120 @@
+ID MANUAL
+---------
+
+CREATE DATABASE BibliotecaManual;
+USE BibliotecaManual;
+
+CREATE TABLE Libros (
+    ID_Libro INT PRIMARY KEY,
+    Titulo VARCHAR(100) NOT NULL,
+    Autor VARCHAR(50) NOT NULL,
+    Año_Publicacion INT NOT NULL,
+    Genero VARCHAR(30) NOT NULL,
+    Disponible BOOLEAN DEFAULT TRUE
+);
+
+
+COMPILAR TODAS LAS CLASES
+-------------------------
+javac -cp ".;lib/mysql-connector-j-9.3.0.jar" src/*.java
+
+
+-- APUNTES
+-- -------
+
+-- Crear la base de datos
+CREATE DATABASE NombreDeLaBase;
+
+-- Usar la base de datos
+USE NombreDeLaBase;
+
+-- Crear una tabla genérica con distintos tipos de campos
+CREATE TABLE NombreDeLaTabla (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,             -- ID con incremento automático (se genera solo)
+    id INT PRIMARY KEY,                            -- ID manual (tú lo defines al insertar)
+
+    campo_texto VARCHAR(100) NOT NULL,             -- Texto corto obligatorio
+    campo_numero INT,                              -- Número entero (edad, unidades, etc.)
+    campo_decimal DOUBLE,                          -- Número decimal (precio, medida...)
+    campo_booleano BOOLEAN DEFAULT TRUE,           -- Booleano (true o false, por defecto TRUE)
+    campo_fecha DATE,                              -- Fecha (formato: YYYY-MM-DD)
+    campo_fecha_hora DATETIME,                     -- Fecha y hora juntas (YYYY-MM-DD HH:MM:SS)
+
+    campo_foraneo INT,                             -- Clave foránea (relación con otra tabla)
+    FOREIGN KEY (campo_foraneo) REFERENCES OtraTabla(id) -- Relación con otra tabla
+);
+
+
+ENUNCIADO ACTIVIDAD
+-------------------
+
+Gestión de Libros en una Biblioteca (DAO) 
+
+Desarrollar una aplicación que permita gestionar los libros de una biblioteca aplicando el patrón DAO para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en una base de datos.
+
+Crear una base de datos llamada Biblioteca con una tabla Libros que incluya los siguientes campos:
+
+    ID_Libro (INT, PRIMARY KEY, AUTO_INCREMENT)
+
+    Titulo (VARCHAR(100), NOT NULL)
+
+    Autor (VARCHAR(50), NOT NULL)
+
+    Año_Publicacion (INT, NOT NULL)
+
+    Genero (VARCHAR(30), NOT NULL)
+
+    Disponible (BOOLEAN, DEFAULT TRUE)
+
+Clases Obligatorias:
+
+    ConexionBD: Clase para gestionar la conexión a la base de datos.
+
+        Clase para gestionar la conexión a la base de datos.
+
+        Métodos: conectar() y desconectar().
+
+    Libro: Clase que representa a los libros (Entidad).
+
+        Clase que representa a los libros (Entidad).
+
+        Atributos: id, titulo, autor, añoPublicacion, genero, disponible.
+
+        Métodos: getters y setters para cada atributo.
+
+    LibroDAO: Clase que contiene los métodos CRUD.
+
+        Clase que contiene los métodos CRUD (Data Access Object).
+
+        Métodos:
+
+            insertarLibro(Libro libro): Añadir un nuevo libro.
+
+            listarLibros(): Mostrar todos los libros.
+
+            actualizarLibro(Libro libro): Modificar la información de un libro.
+
+            eliminarLibro(int id): Eliminar un libro por su ID.
+
+    GestorBiblioteca: Clase principal para interactuar con la aplicación.
+
+        Clase principal para interactuar con la aplicación.
+
+        Métodos:
+
+            main(): Punto de entrada de la aplicación.
+
+            mostrarMenu(): Muestra las opciones del menú al usuario.
+
+            registrarLibro(): Permite registrar un nuevo libro.
+
+            listarLibros(): Muestra todos los libros registrados.
+
+            actualizarLibro(): Permite modificar un libro existente.
+
+            eliminarLibro(): Permite eliminar un libro por su ID.
+
+ 
+
+
