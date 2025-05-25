@@ -2,7 +2,7 @@ package TercerTrimestre.Recuperacion.Array.NumeroMayorMenor.Normal;
 
 public class NumeroMayorArray {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
 
         // Array de ejemplo con algunos números
         int[] numeros = {34, 7, 22, 99, 13, 5, 80};

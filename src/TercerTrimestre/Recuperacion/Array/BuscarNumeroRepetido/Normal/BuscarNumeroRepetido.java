@@ -2,7 +2,7 @@ package TercerTrimestre.Recuperacion.Array.BuscarNumeroRepetido.Normal;
 
 public class BuscarNumeroRepetido {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
 
         int[] numeros = {3, 8, 5, 8, 9, 3};
 

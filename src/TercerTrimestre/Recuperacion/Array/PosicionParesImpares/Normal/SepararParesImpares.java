@@ -2,7 +2,7 @@ package TercerTrimestre.Recuperacion.Array.PosicionParesImpares.Normal;
 
 public class SepararParesImpares {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
 
         // Array con algunos números de ejemplo
         int[] numeros = {12, 7, 4, 9, 18, 3, 10, 5};

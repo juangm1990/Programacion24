@@ -2,7 +2,7 @@ package TercerTrimestre.Recuperacion.PruebaPractica3A.Pregunta3.Normal;
 
 public class ArrayCapicua {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
 
         // Array original con algunos números
         int[] numeros = {121, 232, 345, 44, 789, 3003, 123};

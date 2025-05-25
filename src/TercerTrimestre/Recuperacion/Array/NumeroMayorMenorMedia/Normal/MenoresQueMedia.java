@@ -2,7 +2,7 @@ package TercerTrimestre.Recuperacion.Array.NumeroMayorMenorMedia.Normal;
 
 public class MenoresQueMedia {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
 
         // Array de ejemplo con números
         int[] numeros = {10, 20, 30, 40, 50};
