@@ -27,7 +27,7 @@ public class MainScanner {
             System.out.println("5| Mostrar empleados con contratos");
             System.out.println("6| Modificar datos con valores válidos");
             System.out.println("7| Modificar datos con valores inválidos");
-            System.out.println("8| Mostrar salario del empleado");
+            System.out.println("8| Mostrar salario del empleado modificado");
             System.out.println("9| Mostrar salario de todos los empleados");
             System.out.println("----------------------------");
             System.out.println("Por favor, elige una opción:");
@@ -117,13 +117,13 @@ public class MainScanner {
                     if (!empleados.isEmpty()) {
                         Empleado e = empleados.get(0);
                         e.setNombre("Carlos");
-                        e.setApellidos("Hernández López");
-                        e.setTelefono("+34999999999");
+                        e.setApellidos("Garcia");
+                        e.setTelefono("+34666333999");
 
                         Contrato c = e.getContrato();
                         c.setSalario(2000);
-                        c.setTipoDeJornada("tiempo parcial");
-                        c.setClausula("Contrato modificado con acuerdo sindical.");
+                        c.setTipoDeJornada("Parcial");
+                        c.setClausula("Acuerdo sindical");
 
                         System.out.println("Datos válidos modificados correctamente.");
                         System.out.println(e);
@@ -162,11 +162,12 @@ public class MainScanner {
                         System.out.println("Primero debes crear un empleado.");
                     }
                     break;
-
+                    
                 case 9:
                     // Mostrar todos los salarios de los empleados registrados
                     if (!empleados.isEmpty()) {
-                        for (Empleado e : empleados) {
+                        for (int i = 0; i < empleados.size(); i++) {
+                            Empleado e = empleados.get(i);
                             System.out.println("El salario de " + e.getNombre() + " " + e.getApellidos() +
                                     " es: " + e.getContrato().getSalario() + " euros");
                         }
