@@ -20,7 +20,8 @@ public class Migrar {
         int opcion = 0;
 
         do {
-
+            System.out.println("----------------");
+            System.out.println("MENU DE OPCIONES");
             System.out.println("1.- Mostrar Fichero Alumnos");
             System.out.println("2.- Mostrar Fichero Notas");
             System.out.println("3.- Mostrar Fichero Notas Medias");
