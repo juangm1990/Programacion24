@@ -1,4 +1,4 @@
-package TercerTrimestre.Recuperacion.PruebaPractica6;
+package TercerTrimestre.Recuperacion.PruebaPractica6A;
 
 public class Autobus extends Vehiculo {
     private double precioKilometro;

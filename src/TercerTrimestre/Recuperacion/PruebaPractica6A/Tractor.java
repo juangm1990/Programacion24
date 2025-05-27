@@ -1,4 +1,4 @@
-package TercerTrimestre.Recuperacion.PruebaPractica6;
+package TercerTrimestre.Recuperacion.PruebaPractica6A;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
