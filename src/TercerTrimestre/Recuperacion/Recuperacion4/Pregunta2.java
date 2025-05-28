@@ -3,7 +3,7 @@ package TercerTrimestre.Recuperacion.Recuperacion4;
 import java.util.Scanner;
 
 public class Pregunta2 {
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         Scanner teclado = new Scanner(System.in);
 
         System.out.print("Introduce el tamaño de la matriz cuadrada (por ejemplo, 3 para 3x3): ");
@@ -14,49 +14,50 @@ public class Pregunta2 {
         double[][] resultado = new double[tamano][tamano];
 
         // Introducir valores de la primera matriz
-        System.out.println("Introduce los valores de la PRIMERA MATRIZ:");
-        for (int fila = 0; fila < tamano; fila++) {
-            for (int columna = 0; columna < tamano; columna++) {
-                System.out.print("Fila " + fila + ", Columna " + columna + ": ");
-                matriz1[fila][columna] = teclado.nextDouble();
+        System.out.println("\nIntroduce los valores de la PRIMERA MATRIZ:");
+        for (int i = 0; i < tamano; i++) {  // i = fila
+            for (int j = 0; j < tamano; j++) {  // j = columna
+                System.out.print("Fila " + i + ", Columna " + j + ": ");
+                matriz1[i][j] = teclado.nextDouble();
             }
         }
 
         // Introducir valores de la segunda matriz
-        System.out.println("Introduce los valores de la SEGUNDA MATRIZ:");
-        for (int fila = 0; fila < tamano; fila++) {
-            for (int columna = 0; columna < tamano; columna++) {
-                System.out.print("Fila " + fila + ", Columna " + columna + ": ");
-                matriz2[fila][columna] = teclado.nextDouble();
+        System.out.println("\nIntroduce los valores de la SEGUNDA MATRIZ:");
+        for (int i = 0; i < tamano; i++) {  // i = fila
+            for (int j = 0; j < tamano; j++) {  // j = columna
+                System.out.print("Fila " + i + ", Columna " + j + ": ");
+                matriz2[i][j] = teclado.nextDouble();
             }
         }
 
-        // Calcular la matriz resultado (resta)
-        for (int fila = 0; fila < tamano; fila++) {
-            for (int columna = 0; columna < tamano; columna++) {
-                resultado[fila][columna] = matriz1[fila][columna] - matriz2[fila][columna];
+        // Calcular la matriz resultado (resta matriz1 - matriz2)
+        for (int i = 0; i < tamano; i++) {  // i = fila
+            for (int j = 0; j < tamano; j++) {  // j = columna
+                resultado[i][j] = matriz1[i][j] - matriz2[i][j];
             }
         }
 
         // Mostrar la primera matriz
-        System.out.println("Primera matriz:");
+        System.out.println("\nPrimera matriz:");
         mostrarMatriz(matriz1);
 
         // Mostrar la segunda matriz
-        System.out.println("Segunda matriz:");
+        System.out.println("\nSegunda matriz:");
         mostrarMatriz(matriz2);
 
-        // Mostrar el resultado de la resta
-        System.out.println("Matriz resultado (Primera - Segunda):");
+        // Mostrar la matriz resultado
+        System.out.println("\nMatriz resultado (Primera - Segunda):");
         mostrarMatriz(resultado);
 
         teclado.close();
     }
 
+    // Método para imprimir cualquier matriz de tamaño variable
     public static void mostrarMatriz(double[][] matriz) {
-        for (int fila = 0; fila < matriz.length; fila++) {
-            for (int columna = 0; columna < matriz[fila].length; columna++) {
-                System.out.print(matriz[fila][columna] + "\t");
+        for (int i = 0; i < matriz.length; i++) {  // i = fila
+            for (int j = 0; j < matriz[i].length; j++) {  // j = columna
+                System.out.print(matriz[i][j] + "\t");
             }
             System.out.println();
         }

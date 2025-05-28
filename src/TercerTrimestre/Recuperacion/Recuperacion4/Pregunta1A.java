@@ -1,26 +1,16 @@
 package TercerTrimestre.Recuperacion.Recuperacion4;
 
-import java.util.Scanner;
+public class Pregunta1A {
+    
+    public static void main(String[] args) {
+        int totalParticipantes = 3; // Cambia este valor si quieres probar con más participantes
 
-public class Pregunta1 {
-    public static void main(String[] args) throws Exception {
-        Scanner input = new Scanner(System.in);
-
-        System.out.print("¿Cuántos participantes hay? ");
-        int totalParticipantes = input.nextInt();
-
-        double[][] notas = new double[totalParticipantes][5]; // Matriz de notas con decimales
-
-        // Rellenar la matriz
-        for (int i = 0; i < totalParticipantes; i++) {  // i = participante
-            System.out.println("Introduce las 5 notas del participante " + (i + 1) + ":");
-            for (int j = 0; j < 5; j++) {  // j = prueba
-                System.out.print("Nota de la prueba " + (j + 1) + ": ");
-                notas[i][j] = input.nextDouble();
-            }
-        }
-
-        System.out.println();
+        // Matriz de notas: totalParticipantes filas y 5 columnas (5 pruebas)
+        double[][] notas = {
+            {75.5, 80.0, 65.0, 90.0, 85.5},  // Participante 1: Pruebas 1 a 5
+            {60.0, 70.0, 72.5, 68.0, 74.0},  // Participante 2: Pruebas 1 a 5
+            {85.0, 90.5, 88.0, 92.0, 89.5}   // Participante 3: Pruebas 1 a 5
+        };
 
         // Puntuación total de cada participante
         System.out.println("Puntuación total de cada participante:");
@@ -65,8 +55,5 @@ public class Pregunta1 {
             double media = sumaNotasPrueba / totalParticipantes;
             System.out.println("Prueba " + (j + 1) + ": " + media);
         }
-
-        input.close();
     }
 }
-

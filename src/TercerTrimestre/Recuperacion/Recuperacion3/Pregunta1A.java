@@ -1,17 +1,14 @@
 package TercerTrimestre.Recuperacion.Recuperacion3;
 
-import java.util.Scanner;
-
-public class Pregunta1 {
+public class Pregunta1A {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        String[] textos = {"Hola mundo", "Aprender Java", "Programación es divertida", "OpenAI", "ChatGPT", "Código abierto", "Trabajo en equipo"};
 
         int letraA = 0;
         int letraO = 0;
 
-        for (int i = 1; i <= 7; i++) {
-            System.out.println("Escribe una palabra o frase (" + i + " de 7):");
-            String texto = input.nextLine();
+        for (int i = 0; i < textos.length; i++) {
+            String texto = textos[i];
 
             boolean tieneLetraA = false;
             boolean tieneLetraO = false;
@@ -37,7 +34,5 @@ public class Pregunta1 {
 
         System.out.println("Número de cadenas que contienen la letra 'a': " + letraA);
         System.out.println("Número de cadenas que contienen la letra 'o': " + letraO);
-
-        input.close();
     }
 }

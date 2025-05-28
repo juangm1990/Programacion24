@@ -1,26 +1,16 @@
 package TercerTrimestre.Recuperacion.Recuperacion3;
 
-import java.util.Scanner;
-
-public class Pregunta2 {
+public class Pregunta2A {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        // Números predefinidos (puedes cambiar los valores)
+        int[] numeros = {12, 7, 9, 4, 15};
 
-        int[] numeros = new int[5]; // Puedes cambiar a 10 si el examen lo pide
         int numerosPares = 0;
         int numerosImpares = 0;
 
-        // Pedimos los 5 números
-        System.out.println("Introduce 5 números:");
-
-        for (int i = 0; i < 5; i++) {
-            System.out.print("Número " + (i + 1) + ": ");
-            numeros[i] = input.nextInt();
-        }
-
-        // Mostrar los números pares
+        // Mostrar los pares
         System.out.println("Números pares:");
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < numeros.length; i++) {
             if (numeros[i] % 2 == 0) {
                 System.out.println(numeros[i]);
                 numerosPares = numerosPares + 1;
@@ -31,9 +21,9 @@ public class Pregunta2 {
             System.out.println("No hay números pares.");
         }
 
-        // Mostrar los números impares
+        // Mostrar los impares
         System.out.println("Números impares:");
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < numeros.length; i++) {
             if (numeros[i] % 2 != 0) {
                 System.out.println(numeros[i]);
                 numerosImpares = numerosImpares + 1;
@@ -43,7 +33,5 @@ public class Pregunta2 {
         if (numerosImpares == 0) {
             System.out.println("No hay números impares.");
         }
-
-        input.close();
     }
 }
