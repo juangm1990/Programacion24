@@ -12,7 +12,7 @@ public class Main {
         ArrayList<Tractor> tractores = new ArrayList<>();
 
         do {
-            System.out.println("\n--- MENÚ PRINCIPAL ---");
+            System.out.println("--- MENÚ PRINCIPAL ---");
             System.out.println("1 | Crear vehículo");
             System.out.println("2 | Alquilar vehículo");
             System.out.println("3 | Devolver vehículo");
